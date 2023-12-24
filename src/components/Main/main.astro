@@ -83,22 +83,25 @@ import FourthSection from "./fourthSection.astro";
             btnTxt.innerHTML = "Leer menos";
             viewBtn.style.animation = 'go-b 1s forwards';
             noVisible.style.animation = 'text-a 1s forwards';
-            if (window.screen.availWidth <= 480){
+            if (window.screen.availWidth <=480){
                 wrapperImg.style.display = 'none';
                 // wrapperImg.style.animation = 'go-m-b 1s forwards';
                 form.style.animation = 'go-m-b 1s forwards';
                 document.querySelector('.remove-hr').style.display = 'none';
-            }
+            } 
         } else {
             clicked = false;
             arrow.style.animation  = "read-more 1s forwards";
             btnTxt.innerHTML = "Leer más";
             viewBtn.style.animation = 'go-t 1s forwards';
             noVisible.style.animation = 'text-d 1s forwards';
-            if (window.screen.availWidth <= 480){
+            if (window.screen.availWidth > 320 && window.screen.availWidth <=480){
                 wrapperImg.style.display = 'block';
                 form.style.animation = 'go-m-t 1s forwards';
                 wrapperImg.style.animation = 'go-m-t 1s forwards';
+                document.querySelector('.remove-hr').style.display = 'block';
+            }   else if (window.screen.availWidth <= 320){;
+                form.style.animation = 'go-m-t 1s forwards';
                 document.querySelector('.remove-hr').style.display = 'block';
             }
         }
