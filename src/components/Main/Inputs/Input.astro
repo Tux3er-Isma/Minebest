@@ -1,0 +1,59 @@
+---
+const { label, placeholder, type, size="sm", required="true", asterisk="*", tag }  = Astro.props; 
+---
+
+<div class="inpt-container">
+    <label for="inpt-container__inpt" class="inpt-container__label">{label}  <span class="inpt-container__label__a">{asterisk}</span></label>
+    <input type={type} placeholder={placeholder} class="inpt-container__inpt"  data-size={size} required={required} tabindex="0">
+</div>
+
+<style lang="scss">
+    [data-size="lg"]{
+        height: 30vh;
+    }
+
+    .inpt-container{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+
+        &__label{
+            margin-bottom: 20px;
+            color: #fff;
+
+            &__a{
+                color: #ae7bff;
+            }
+        }
+
+        &__inpt{
+            width: 600px;
+            border-radius: 10px;
+            padding: 13px;
+            border: 1px solid #ae7bff;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            transition: all .5s;
+
+            &:focus{
+                box-shadow: 1px 1px 30px  #882fe0;
+            }
+
+            &::placeholder{
+                font-weight: 600;
+                opacity: .5;
+                color: #3d3640;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .inpt-container{
+
+            &__inpt{
+                width: 280px;
+            }
+        }
+    }
+</style>

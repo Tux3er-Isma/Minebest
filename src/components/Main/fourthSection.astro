@@ -1,0 +1,24 @@
+---
+import Form from "./Form.astro";
+import Pyramid from "./Pyramid.astro";
+---
+
+<article class="article">
+    <h1 class="article__title">¿Quieres empezar <br>a minar?</h1>
+    <Form></Form>
+</article>
+
+<style lang="scss">
+    .article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title{
+            color: #fff;
+            width: 100vw;
+            font-size: clamp(30px,3.5vw + 1vh,80px);
+            text-align: center;
+        }
+    }
+</style>

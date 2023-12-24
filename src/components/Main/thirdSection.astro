@@ -1,0 +1,166 @@
+---
+import ReadMore from "./readMore.astro";
+---
+
+<div class="mega-wrapper">
+    <picture class="wrapper-img">
+        <img src="https://cdn.discordapp.com/attachments/973568724722389052/1188503654395822111/1.png?ex=659ac348&is=65884e48&hm=da9d7e31fee748cd1c488b0522936a233ee59a0a0ff141773fbb596945f6edc9&" alt="MineBest" class="wrapper-img__img">
+    </picture>
+    <div class="wrapper">
+        <article class="article">
+            <h1 class="article__title">Sobre Nosotros</h1>
+            <p class="article__txt">
+                Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación, confianza y compromiso con nuestros clientes.
+                <br><br>
+        Somos un equipo apasionado de profesionales con un objetivo común: ofrecer soluciones sólidas y confiables en el emocionante campo de la minería de Bitcoin. Nuestra dedicación a la excelencia y nuestra mentalidad orientada al futuro nos distinguen en este dinámico paisaje digital.
+                <br><br>
+                <p class="article__txt__no-visible">
+                    t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved<br><br> over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+            </p>
+            <div class="view-btn">
+                <ReadMore></ReadMore>
+            </div>
+        </article>
+    </div>
+</div>
+
+<style lang="scss">
+    .mega-wrapper{
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper-img{
+        position: relative;
+    }
+
+    .wrapper-img__img{
+        width: 25vw;
+        height: 90vh;
+        object-fit: cover;
+    }
+
+    .wrapper{
+        width: 70vw;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-self: flex-start;
+    }
+
+    .article{
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 60vh;
+        width: 40vw;
+        color: #fff;
+        text-align: right;
+        
+        &__title{
+            margin-bottom: 50px;
+            align-self: flex-end;
+            font-size: clamp(30px,3.5vw + 1vh,80px);
+        }
+
+        &__txt{
+            transition: all .5s;
+
+            &__no-visible{
+                height: 250px;
+                opacity: 0;
+
+                @keyframes text-a{
+                    from{
+                        opacity: 0;
+                    }
+                    to{
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes text-d{
+                    from{
+                        opacity: 1;
+                    }
+                    to{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .view-btn{
+        position: relative;
+        top: -202px;
+    }
+    
+    @keyframes go-b{
+            0%{
+                top: -232px;
+            }
+            100%{
+                top: 30px;
+            }
+        }
+
+        @keyframes go-t{
+            0%{
+                top: 30px;
+            }
+            100%{
+                top: -232px;
+            }
+        }
+
+    @media only screen and (min-width: 1600px){
+    }
+
+    @media only screen and (max-width: 480px){
+        .mega-wrapper{
+            flex-direction: column;
+        }
+
+        .wrapper{
+            order: 1;
+        }
+
+        .wrapper-img{
+            order: 2;
+
+            &__img{
+                width: 80vw;
+            }
+        }
+
+
+        .article{
+            width: 80vw;
+        }
+
+        @keyframes go-b{
+            0%{
+                top: -232px;
+            }
+            100%{
+                top: 130px;
+            }
+        }
+
+        @keyframes go-t{
+            0%{
+                top: 130px;
+            }
+            100%{
+                top: -232px;
+            }
+        }
+    }
+</style>

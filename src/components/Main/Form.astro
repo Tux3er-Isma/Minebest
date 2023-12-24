@@ -1,0 +1,52 @@
+---
+import Input from "./Inputs/Input.astro";
+import Textare from "./Inputs/Textare.astro";
+import Checkbox from "./Inputs/Checkbox.astro";
+import SendBtn from "./Inputs/SendBtn.astro";
+---
+
+<form class="form" onsubmit="return false">
+    <Input label="Nombre y apellidos" placeholder="John Doe" type="text"></Input>
+    <Input label="Email" placeholder="johndoe@example.com" type="email"></Input>
+    <Input label="Número de teléfono" placeholder="+34 xxx xxx xxx" type="tel"></Input>
+    <Textare label="Mensaje" placeholder="Escriba un mensaje" type="text" required="false" asterisk="" size="lg"></Textare>
+    <label class="form__cc">
+        <Checkbox></Checkbox>
+        He leído y acepto la política y privacidad
+    </label>
+    <div class="form__bc">
+        <SendBtn></SendBtn>
+    </div>
+<form>
+
+<style lang="scss">
+    .form{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+
+        &__cc{
+            color: #fff;
+            display: flex;
+            width: 600px;
+            margin-top: 30px;
+        }
+
+        &__bc{
+            display: flex;
+            width: 600px;
+            margin-top: 30px;
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .form{
+
+            &__cc, &__bc{
+                width: 280px;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,107 @@
+---
+import Video from "./video.astro";
+import FirstSection from "./firstSection.astro";
+import SecondSection from "./secondSection.astro";
+import ThirdSection from "./thirdSection.astro";
+import FourthSection from "./fourthSection.astro";
+---
+
+<main class="main">
+    <section class="main__section" id="s1">
+        <Video></Video>
+    </section>
+    <section class="main__section main__section--2" id="s2">
+        <FirstSection></FirstSection>
+    </section>
+    <section class="main__section main__section--3" id="s3">
+        <SecondSection></SecondSection>
+    </section>
+    <hr>
+    <section class="main__section main__section--4" id="s4">
+        <ThirdSection></ThirdSection>
+    </section>
+    <hr class="remove-hr">
+    <section class="main__section main__section--5" id="s5">
+        <FourthSection></FourthSection>
+    </section>
+</main>
+
+<style lang="scss">
+    .main{
+        margin-bottom: 150px;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__section{
+            width: 100vw;
+        }
+
+        &__section--2{
+            margin-bottom: 150px;
+        }
+
+        &__section--3{
+            margin-bottom: 100px;
+        }
+
+        &__section--4{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__section--5{
+            position: relative;
+            margin-top: 100px;
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .main{
+
+            &__section--5{
+                margin-top: 00px;
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    const viewBtn = document.querySelector('.view-btn');
+    const noVisible = document.querySelector('.article__txt__no-visible');
+    const arrow = document.querySelector('.arrow');
+    const btnTxt = document.querySelector('.readmore-txt');
+    const wrapperImg = document.querySelector('.wrapper-img');
+    const form = document.querySelector("#s5")
+    let clicked = false;
+    viewBtn.addEventListener('click', () =>{
+        if (clicked == false){
+            clicked = true;
+            arrow.style.animation  = "read-less 1s forwards";
+            btnTxt.innerHTML = "Leer menos";
+            viewBtn.style.animation = 'go-b 1s forwards';
+            noVisible.style.animation = 'text-a 1s forwards';
+            if (window.screen.availWidth <= 480){
+                wrapperImg.style.display = 'none';
+                // wrapperImg.style.animation = 'go-m-b 1s forwards';
+                form.style.animation = 'go-m-b 1s forwards';
+                document.querySelector('.remove-hr').style.display = 'none';
+            }
+        } else {
+            clicked = false;
+            arrow.style.animation  = "read-more 1s forwards";
+            btnTxt.innerHTML = "Leer más";
+            viewBtn.style.animation = 'go-t 1s forwards';
+            noVisible.style.animation = 'text-d 1s forwards';
+            if (window.screen.availWidth <= 480){
+                wrapperImg.style.display = 'block';
+                form.style.animation = 'go-m-t 1s forwards';
+                wrapperImg.style.animation = 'go-m-t 1s forwards';
+                document.querySelector('.remove-hr').style.display = 'block';
+            }
+        }
+    });
+
+</script>

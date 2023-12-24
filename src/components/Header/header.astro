@@ -1,0 +1,184 @@
+---
+import Nav from "./Nav.astro";
+import GradientBtn from "../gradientBtn.astro";
+import GradientBtnWB from "../gradientBtnWB.astro";
+import InfoBtn from "../infoBtn.astro";
+import StaticsContainer from "./staticsContainer.astro";
+---
+
+<header class="header" id="header">
+    <img src="../../../public/desktop.png" alt="Sonwy Mountains" class="header__img">
+    <div class="f">
+    <Nav></Nav>
+    </div>
+    <div class="h-2">
+        <div class="header__info-container">
+            <h1 class="header__info-container__title">Minar Bitcoin: <br> la mejor opción</h1>
+            <div class="header__info-container__btn-container">
+                <GradientBtnWB></GradientBtnWB>
+                <InfoBtn text="Saber más"></InfoBtn>
+            </div>
+        </div>
+        <div class="header__statics-container">
+            <StaticsContainer num="" other="€" txt="Deposito Mínimo" id="card-1" size="sm">
+                <slot slot="after">€</slot>
+            </StaticsContainer>
+            <StaticsContainer num="" other="k" txt="Inversores Crypto" id="card-2", size="lg">
+                <span slot="before">+</span>
+            </StaticsContainer>
+            <StaticsContainer num="" txt="Pagos instantaneos" id="card-3" size="sm">
+                <span slot="after">/7</span>    
+            </StaticsContainer> 
+        </div>
+    </div>
+</header>
+
+<!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@&display=swap');
+</style> -->
+
+<style lang="scss">
+    .f{
+        width: 100vw;
+        height: 17.5vh;
+    }
+
+    .h-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+
+        &__img{
+            width: 100vw;
+            height: 90vh;
+            object-fit: cover;
+            object-position: top;
+            position: absolute;
+            z-index: -1;
+            top: 0px;
+        }
+
+        &__info-container{
+            margin-bottom: 15vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: fit-content;
+            margin-left: 100px;
+
+            &__title{
+                font-size: 10vh;
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            &__btn-container{
+                margin-top: 10vh;
+                width: 33vw;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__statics-container{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           padding: 20px;
+           align-self: center;
+           background-color: #161616; 
+           width: 85vw;
+           flex-wrap: wrap;
+        }
+    }
+
+    @media only screen and (max-width: 900px){
+        .header{
+
+            &__info-container{
+                margin: 0;
+                width: 100vw;
+                justify-content: center;
+                align-items: center;
+
+                &__title{
+                    font-size: 5vh;
+                    text-align: center;
+                }
+
+                &__btn-container{
+                    height: 30vh;
+                    width: 70vw;
+
+                    justify-content: center;
+                }
+            }
+        }
+    }
+</style>
+
+
+<!-- <script is:inline>
+    const strNum0 = document.querySelectorAll(".container__num-container")[0];
+    let num0 = 250
+    let cont0 = 0;
+    strNum0.innerHTML = 0;
+    strNum0.innerHTML = parseInt(strNum0.innerHTML);
+    const counter0 = () =>{
+        cont0++;
+        strNum0.innerHTML = cont0;
+
+        if (num0 == strNum0.innerHTML){
+            clearInterval(interval0)
+        }
+    }
+    const interval0 = setInterval(counter0, 1)
+
+    const strNum1 = document.querySelectorAll(".container__num-container")[1];
+    let num1 = 17000
+    let cont1 = 0;
+    strNum1.innerHTML = 0;
+    strNum1.innerHTML = parseInt(strNum1.innerHTML);
+    const counter1 = () =>{
+        cont1++;
+        strNum1.innerHTML = cont1;
+
+        if (num1 == strNum1.innerHTML){
+            clearInterval(interval1)
+        }
+    }
+    const interval1 = setInterval(counter1, 1)
+
+    const strNum2 = document.querySelectorAll(".container__num-container")[2];
+    let num2 = 24
+    let cont2 = 0;
+    strNum2.innerHTML = '0';
+    strNum2.innerHTML = parseInt(strNum2.innerHTML);
+    const counter2 = () =>{
+        cont2++;
+        strNum2.innerHTML = cont2;
+
+        if (num2 == strNum2.innerHTML){
+            clearInterval(interval2)
+        }
+    }
+    const interval2 = setInterval(counter2, 100)
+</script>  -->
+
+<script is:inline>
+    const routes = ["../../../public/desktop.png", "../../../public/mobile.png"];
+    const img = document.querySelector('.header__img');
+    if (window.screen.availWidth <= 480){
+        img.src = routes[1];
+    } else {
+        img.src = routes[0];
+    }
+    console.log(img);
+</script>

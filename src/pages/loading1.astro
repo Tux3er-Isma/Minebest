@@ -1,0 +1,27 @@
+---
+import Bitcoin from "../components/Bitcoin.astro";
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Loading...</title>
+        <ViewTransitions />
+	</head>
+	<body>
+		<a href="/" class="return"></a>
+        <Bitcoin></Bitcoin>
+		<script is:inline>
+			const link = document.querySelector('.return');
+            setTimeout(() =>{
+                link.click();
+            }, 2000)
+        </script>
+	</body>
+</html>

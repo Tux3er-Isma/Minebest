@@ -1,0 +1,95 @@
+<footer class="footer">
+    <ul class="footer__list-container">
+        <li class="footer__list-container__items"><a href="#header" class="footer__list-container__items__links">Inicio</a></li>
+        <li class="footer__list-container__items"><a href="#s1" class="footer__list-container__items__links">Video presentación</a></li>
+        <li class="footer__list-container__items"><a href="#s2" class="footer__list-container__items__links">Descubre por qué minar Bitcoin</a></li>
+        <li class="footer__list-container__items"><a href="#s3" class="footer__list-container__items__links">Nosotros somos los mejores</a></li>
+        <li class="footer__list-container__items"><a href="#s4" class="footer__list-container__items__links">Sobre nosotros</a></li>
+    </ul>
+    <button type="button" class="footer__btn">MineBest</button>
+    <a href="" class="footer__pp">Política y Privacidad</a>
+</footer>
+
+<style lang="scss">
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background-color: #161616;
+        padding: 40px;
+        height: 250px;
+        width: 100vw;
+        
+        &__list-container{
+            width: 80vw;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+
+            &__items{
+
+                font-weight: 500;
+
+                &__links{
+                    color: #333;
+                    text-decoration: none;
+                    transition: all .5s;
+
+                    &:visited{
+                        color: #333;
+                    }
+
+                    &:hover{
+                        color: #fff;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &__btn{
+            font-size: 17px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 150px;
+            outline: none;
+            border: none;
+            background-color: #fff;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .5s;
+            border: 2px solid #fff;
+
+            &:hover{
+                background-color: #161616;
+                color: #fff;
+            }
+        }
+
+        &__pp{
+            color: #fff;
+
+            &:visited{
+                color: #fff;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .footer{
+            height: fit-content;
+
+            &__list-container{
+                flex-direction: column;
+                align-items: center;
+
+                &__items{
+                    margin: 10px;
+                }
+            }
+        }
+    }
+</style>

@@ -1,0 +1,60 @@
+---
+const { icon, bTxt, txt } = Astro.props;
+---
+
+<div class="info-card">
+    <i class:list={["fa-solid", "info-card__icon", icon]}></i>
+    <div class="info-card__txt-c">
+        <b class="info-card__txt-c__b">{bTxt}</b> {txt}
+    </div>
+</div>
+
+<style lang="scss">
+    .info-card{
+        margin-top: 2.5vh;
+        padding: 20px;
+        background: transparent;
+        width: 43vw;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px;
+        transition: all .2s;
+
+        &:hover{
+            background: rgba(255, 255, 255, 0.11);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5.2px);
+            -webkit-backdrop-filter: blur(5.2px);
+        }
+
+        &__icon{
+            font-size: 35px;
+            color: #956AFF
+        }
+
+        &__txt-c{
+            width: 35vw;
+            color: #afafaf;
+
+            &__b{
+                color: #fff;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .info-card{
+            padding: 5px;
+            width: 90vw;
+            justify-content: space-evenly;
+
+            &__icon{
+                font-size: 25px;
+            }
+
+            &__txt-c{
+                width: 35vh;
+            }
+        }
+    }
+</style>

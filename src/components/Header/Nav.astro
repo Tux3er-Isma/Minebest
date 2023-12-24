@@ -1,0 +1,115 @@
+---
+import GradientBtn from "../gradientBtn.astro";
+---
+
+<nav class="header__nav">
+    <button class="header__nav__btn">MineBest</button>
+    <div class="header__nav__interact-container">
+        <button class="header__nav__interact-container__btn">
+            <img src="https://cdn.discordapp.com/attachments/973568724722389052/1181665023966331010/image.png?ex=6581e24f&is=656f6d4f&hm=180e9e066c0358d92f28cc0da27af54f74f9ff471f4a93ff9163612293d3190a&" alt="falg" class="header__nav__interact-container__btn__flag">
+            <p class="header__nav__interact-container__btn__txt">ES</p>
+        </button>
+        <div class="header__nav__interact-container__gradient-btn-container">
+            <GradientBtn></GradientBtn>
+        </div>
+    </div>
+</nav>
+
+<style lang="scss">
+    .header{
+
+        &__nav{
+            top: 0px;
+            position: fixed;
+            z-index: 10;
+            width: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            background: rgba(28, 28, 28, 0.39);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(11px);
+            -webkit-backdrop-filter: blur(11px);
+
+            &__btn{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                fon-weight: bold;
+
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            &__interact-container{
+                display: flex;
+                width: 320px;
+                justify-content: space-between;
+
+                &__btn{
+                    width: 80px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-radius: 30px;
+                    outline: none;
+                    border: none;
+                    padding: 5px;
+                    background-color: #32343fa8;
+                    margin-right: 20px;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                    &__flag{
+                        width: 30px;
+                    }
+
+                    &__txt{
+                        font-family: 'Montserrat';
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media only screen and (min-width: 1600px){
+        .header{
+
+            &__nav{
+
+                &__btn{
+                    margin-left: 50px;
+                }
+
+                &__interact-container{
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 900px){
+        .header{
+
+            &__nav{
+
+                &__interact-container{
+                    width: fit-content;
+
+                    &__gradient-btn-container{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+</style>

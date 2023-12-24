@@ -1,0 +1,110 @@
+---
+import InfoCard from "./infoCard.astro";
+---
+
+<article class="article">
+    <div class="article__title-container">
+        <h1 class="article__title-container__title">Nosotros Somos <br> los mejores</h1>
+        <p class="article__title-container__subtitle">¿Porque? Nos diferenciamos de los demás</p>
+    </div>
+        <div class="article__content-c">
+            <div class="article__card-container">
+                <InfoCard icon="fa-gear" bTxt="Maquinaria y mineria de última generación." txt="Lideramos la industria al utilizar tecnologías energéticamentes eficientes garantizando una mineria de Bitcoin respetuosa con el medio ambiente"></InfoCard>
+                <InfoCard icon="fa-shield" bTxt="Seguridad de Vanguardia." txt="Implementamos medidas de seguridad de última generación para proteger activos y la red blockchain"></InfoCard>
+                <InfoCard icon="fa-eye" bTxt="Maquinaria y mineria de última generación." txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"></InfoCard>
+            </div>
+            <div class="article__img-container">
+                <img src="https://cdn.discordapp.com/attachments/973568724722389052/1185917157981294604/motherboard-panel-electronic-device-or-main-board-industrial-technology-image-within-industrial-machinery-or-a-circuit-board-cpu-or-processor-chip-on-a-circuit-board-3d-rendering-photo.png?ex=65915a6b&is=657ee56b&hm=a475b859a2423cdb079936110877ed77a0de03689237761f6810e1a82d087ed3&" alt="MineBest" class="article__img">
+            </div>
+        </div>
+</article>
+
+<style lang="scss">
+    .article{
+        margin-left: 60px;
+        width: 100vw;
+
+        &__title-container{
+
+            &__title{
+                color: #fff;
+                width: 90vw;
+                font-size: clamp(30px,3.5vw + 1vh,80px);
+            }
+
+            &__subtitle{
+                margin-top: 2.5vh;
+                color: #afafaf;
+            }
+        }
+
+        &__content-c{
+            margin-top: 5vh;
+            width: 90vw;
+            height: fit-content;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__img{
+            position: relative;
+            right: -17vh;
+            width: 47vw;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .article{
+            margin: 0;
+
+            &__title-container{
+                margin-left: 20px;
+            }
+
+            &__content-c{
+                width: 100vw;
+                flex-direction: column;
+            }
+
+            &__card-container{
+                width: 100vw;
+                height: fit-content;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            &__img-container{
+                width: 100vw;
+                overflow: hidden;
+            }
+
+            &__img{
+                margin-top: 30px;
+                width: 130vw;
+                right: -20px;
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    const infoCardArr = document.querySelectorAll('.info-card');
+    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1185917157981294604/motherboard-panel-electronic-device-or-main-board-industrial-technology-image-within-industrial-machinery-or-a-circuit-board-cpu-or-processor-chip-on-a-circuit-board-3d-rendering-photo.png?ex=65915a6b&is=657ee56b&hm=a475b859a2423cdb079936110877ed77a0de03689237761f6810e1a82d087ed3&", "https://cdn.discordapp.com/attachments/973568724722389052/1185922081586679958/gettyimages-1390868080-lista_7326843_20220810131032.png?ex=65915f01&is=657eea01&hm=c38bcd1b1b2c8a5e9ec32b83777341378db14d9b5db8fd7842ff17425995bf72&", "https://cdn.discordapp.com/attachments/973568724722389052/1185922274193313912/THUMBNAIL_GRANGES_BITCOIN.png?ex=65915f2f&is=657eea2f&hm=4f23a9dc40cdc59be88834f6ec2c8a502b09cfe96b950f5614a7c1bb0fe3a44d&"];
+    const changeImage = document.querySelector('.article__img');
+    for (let i = 0; i < infoCardArr.length; i++){
+        infoCardArr[i].addEventListener('mouseover', () =>{
+            changeImage.src = imgSources[i];
+            infoCardArr[i].style.backgroundColor = "rgba(255, 255, 255, 0.11)";
+        })
+        infoCardArr[i].addEventListener('mouseleave', () =>{
+            changeImage.src = imgSources[i];
+            infoCardArr[i].style.backgroundColor = "transparent";
+        })
+    }
+    console.log(infoCardArr);
+</script>

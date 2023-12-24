@@ -1,0 +1,276 @@
+---
+const { num, txt, id, size = "sm" } = Astro.props;
+---
+
+<div id={id} class="cards">
+  <p class="container__txt">{txt}</p>
+    <div class="card" data-size={size}>
+      <div class="card-content">
+        <div class="card-info-wrapper">
+            <slot name="before"></slot>
+            <div class="container__num-container">
+              <div class="odometer">{num}</div>
+            </div>
+            <slot name="after"></slot>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+    [data-size="sm"] {
+        width: 35vh;
+    }
+
+    [data-size="lg"]{
+        width: 60vh;
+    }
+
+    @media only screen and (max-width: 480px){
+        [data-size="sm"] {
+            width: 30vh;
+        }
+
+        [data-size="lg"]{
+            width: 30vh;
+        }
+    }
+
+    .container{
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__num-container-c{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+            width: 100%;
+            height: 100px;
+            border-radius: 20px;
+            background-color: #222121;
+            color: #a252ff;
+
+            &__others{
+                color: #a252ff;
+            }
+        }
+
+        &__txt{
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: clamp(13px, 0.9em, 17px);
+        }
+    }
+
+     @media only screen and (max-width: 480px){
+        .container{
+            width: 200px;
+
+            &__txt{
+                margin-bottom: 20px;
+            }
+        }
+     }
+</style>
+
+<style lang="scss">
+    h1{
+        color: #fff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+}
+
+#card-1, #card-2, #card-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: static;
+}
+
+.card::after{
+  opacity: 1;
+}
+
+#card-1:hover > .card::after {
+  opacity: 1;
+}
+
+#card-2:hover > .card::after {
+  opacity: 1;
+}
+
+#card-3:hover > .card::after {
+  opacity: 1;
+}
+
+.card {
+    background-color: #222121;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  position: relative;  
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card::after {  
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: #222121;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  inset: 1px;
+  font-size: clamp(40px, 1.7rem, 100px);
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+display: flex;
+font-weight: bold;
+            color: #a252ff;
+
+            &__others{
+                color: #a252ff;
+            }
+}
+
+.card-info-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    .container{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__num-container-c{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            font-weight: bold;
+            width: 100%;
+            height: 100px;
+            border-radius: 20px;
+            background-color: #222121;
+            color: #a252ff;
+
+            &__others{
+                color: #a252ff;
+            }
+        }
+
+        &__txt{
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+
+    @media only screen and (min-width: 1600px){
+        .card{
+            height: 150px;
+            font-size: 100px;
+            width: 500px;
+        }
+
+        .card-info-wrapper{
+            font-size: 80px;
+        }
+
+        .container{
+
+            &__num-container-c{
+                height: 150px;
+                font-size: 100px;
+                width: 500px;
+            }
+
+            &__txt{
+                font-size: 17px;
+                width: 300px;
+            }
+        }
+    }
+
+     @media only screen and (max-width: 480px){
+        .container{
+            width: 200px;
+
+            &__txt{
+              margin-top: 20px;
+            }
+        }
+     }
+</style>
+
+<script is:inline>
+    document.querySelectorAll('.cards').forEach(card =>{
+        document.getElementById(card.id).onmousemove = e => {
+      for(const card of document.getElementsByClassName("card")) {
+        const rect = card.getBoundingClientRect(),
+              x = e.clientX - rect.left,
+              y = e.clientY - rect.top;
+    
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      };
+    }
+    })
+</script>

@@ -1,0 +1,69 @@
+<div class="video-container">
+    <video controls class="video-container__video">
+        <source src="/video.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+      <div class="video-container__cover-container">
+        <img class="video-container__cover-container__play" src="https://cdn.discordapp.com/attachments/973568724722389052/1182613067159326730/image.png?ex=6585553f&is=6572e03f&hm=8cf319ffdc6ceac3f9b6ad16c77fc41d9628eaf5c0c00ba0604a4ac291a092ab&" alt="Play">
+      </div>
+</div>
+
+<style lang="scss">
+    .video-container{
+        margin-top: 10vh;
+        height: calc(.5625 * 90vw);
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        position: relative;
+
+        &__video{
+            display: none;
+            width: 90vw;
+            height: calc(.5625 * 90vw);
+            border-radius: 20px;
+        }
+
+        &__cover-container{
+            position: absolute;
+            width: 90vw;
+            height: calc(.5625 * 90vw);
+            background-color: #1a1a1a;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+
+            &__play{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                transition: all .5s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    box-shadow: 0px 0px 52px 0px #8a11edd9;
+                }
+            }
+
+        }
+    }
+</style>
+
+<script is:inline>
+    const coverContainer = document.querySelector('.video-container__cover-container')
+    const play = document.querySelector('.video-container__cover-container__play');
+    const video = document.querySelector('.video-container__video');
+    play.addEventListener('click', () =>{
+        coverContainer.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+    })
+</script>
