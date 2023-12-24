@@ -61,9 +61,10 @@ import ReadMore from "./readMore.astro";
         height: 60vh;
         width: 40vw;
         color: #fff;
-        text-align: right;
+        text-align: left;
         
         &__title{
+            width: 40vw;
             margin-bottom: 50px;
             align-self: flex-end;
             font-size: clamp(30px,3.5vw + 1vh,80px);
@@ -129,6 +130,8 @@ import ReadMore from "./readMore.astro";
         }
 
         .wrapper{
+            width: 80vw;
+            align-items: center;
             order: 1;
         }
 
@@ -147,6 +150,11 @@ import ReadMore from "./readMore.astro";
 
         .article{
             width: 80vw;
+
+            &__title{
+                width: 100%;
+            }
+            // text-align: right;
         }
 
         @keyframes go-b{
@@ -175,6 +183,9 @@ import ReadMore from "./readMore.astro";
         }
 
         .wrapper{
+            width: 80vw;
+            align-items: center;
+            order: 1;
             order: 1;
         }
 
@@ -194,6 +205,10 @@ import ReadMore from "./readMore.astro";
 
         .article{
             width: 80vw;
+
+            &__title{
+                width: 100%;
+            }
         }
 
         @keyframes go-b{
