@@ -7,7 +7,7 @@ import StaticsContainer from "./staticsContainer.astro";
 ---
 
 <header class="header" id="header">
-    <img src="/public/desktop.png" alt="Sonwy Mountains" class="header__img">
+    <img src="/desktop.png" alt="Sonwy Mountains" class="header__img">
     <div class="f">
     <Nav></Nav>
     </div>
@@ -173,7 +173,7 @@ import StaticsContainer from "./staticsContainer.astro";
 </script>  -->
 
 <script is:inline>
-    const routes = ["/public/desktop.png", "/public/mobile.png"];
+    const routes = ["/desktop.png", "/mobile.png"];
     const img = document.querySelector('.header__img');
     if (window.screen.availWidth <= 480){
         img.src = routes[1];
