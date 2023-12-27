@@ -3,12 +3,12 @@ import GradientBtn from "../gradientBtn.astro";
 ---
 
 <nav class="header__nav">
-    <button class="header__nav__btn">MineBest</button>
+    <a href="#header"><button class="header__nav__btn">MineBest</button></a>
     <div class="header__nav__interact-container">
-        <button class="header__nav__interact-container__btn">
+        <!-- <button class="header__nav__interact-container__btn">
             <img src="https://cdn.discordapp.com/attachments/973568724722389052/1181665023966331010/image.png?ex=6581e24f&is=656f6d4f&hm=180e9e066c0358d92f28cc0da27af54f74f9ff471f4a93ff9163612293d3190a&" alt="falg" class="header__nav__interact-container__btn__flag">
             <p class="header__nav__interact-container__btn__txt">ES</p>
-        </button>
+        </button> -->
         <div class="header__nav__interact-container__gradient-btn-container">
             <GradientBtn></GradientBtn>
         </div>
@@ -16,6 +16,10 @@ import GradientBtn from "../gradientBtn.astro";
 </nav>
 
 <style lang="scss">
+    a{
+        height: fit-content;
+    }
+
     .header{
 
         &__nav{
@@ -30,6 +34,12 @@ import GradientBtn from "../gradientBtn.astro";
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(11px);
             -webkit-backdrop-filter: blur(11px);
+            position: fixed;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        transition: all 100ms ease-in-out;
+            align-items: center;
 
             &__btn{
                 background-color: transparent;
@@ -48,7 +58,7 @@ import GradientBtn from "../gradientBtn.astro";
 
             &__interact-container{
                 display: flex;
-                width: 320px;
+                width: fit-content;
                 justify-content: space-between;
 
                 &__btn{
@@ -61,7 +71,6 @@ import GradientBtn from "../gradientBtn.astro";
                     border: none;
                     padding: 5px;
                     background-color: #32343fa8;
-                    margin-right: 20px;
 
                     &:hover{
                         cursor: pointer;
@@ -80,6 +89,7 @@ import GradientBtn from "../gradientBtn.astro";
         }
 
     }
+
 
     @media only screen and (min-width: 1600px){
         .header{
@@ -113,3 +123,24 @@ import GradientBtn from "../gradientBtn.astro";
         }
     }
 </style>
+
+<script is:inline>
+ document.addEventListener("DOMContentLoaded", function () {
+  var prevScrollpos = window.pageYOffset;
+  var navbar = document.querySelector(".header__nav");
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-60px";
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+});
+
+
+</script>
