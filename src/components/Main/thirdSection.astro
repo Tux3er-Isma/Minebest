@@ -4,15 +4,21 @@ import CleanBtn from "./cleanBtn.astro";
 
 <article class="article">
     <picture class="article__img-container">
-        <img src="https://cdn.discordapp.com/attachments/1141017064618868737/1189301023811047514/pexels-alesia-kozik-6770775.jpg?ex=659da9e4&is=658b34e4&hm=c876100b0dd6b84128d364d92a7c0484a4cdcc685a06d9d93d8c9e706bacb33b&" alt="MineBest" class="article__img-container__img">
+        <img src="https://cdn.discordapp.com/attachments/973568724722389052/1189669818903830618/pexels-energepiccom-159888.jpg?ex=659f015b&is=658c8c5b&hm=1ef67754a9b8e15513d47f5e78b29bd0b6c65aeae20eae91a6ec919beef4ef31&" alt="MineBest" class="article__img-container__img">
     </picture>
         <div class="article__card">
             <div class="article__card__content-container">
-                <h1 class="article__card__title">Sobre Nosotros</h1>
-                <p class="article__card__txt">
-                    Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación, confianza y compromiso con nuestros clientes.
-                    <br><br>
-                </p>
+                <div>
+                    <h1 class="article__card__title">Sobre Nosotros</h1>
+                    <p class="article__card__txt">
+                        Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación, <span class="article__card__content-container__purple">confianza y compromiso con nuestros clientes.</span>
+                        <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="article__card__content-container__purple">Neque recusandae</span> in quos culpa modi eaque optio laborum minus nesciunt tempora dignissimos expedita eius, <span class="article__card__content-container__purple">placeat eligendi</span> ad veritatis at dolorem sapiente.
+                        <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="article__card__content-container__purple">Voluptatibus, rerum.</span>
+                        <br><br>
+                    </p>
+                </div>
                 <div class="article__card__btn-container">
                     <CleanBtn></CleanBtn>
                 </div>
@@ -23,14 +29,14 @@ import CleanBtn from "./cleanBtn.astro";
 <style lang="scss">
     .article{
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         width: 100vw;
         height: 70vh;
         align-items: center;
 
         &__img-container{
             position: relative;
-            right: 100px;
+            right: 15vw;
             height: 100%;
 
             &__img{
@@ -47,14 +53,14 @@ import CleanBtn from "./cleanBtn.astro";
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background-color: rgb(20 20 20);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            // background-color: rgb(20 20 20);
+            // border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
             padding: 20px;
             position: relative;
-            right: 200px;
+            right: 7vh;
             width: 630px;
-            height: 45vh;
+            height: 70vh;
             &::before{
                 justify-self: center;
                 background: radial-gradient(
@@ -79,11 +85,21 @@ import CleanBtn from "./cleanBtn.astro";
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
+
+                &__purple{
+                    color: #cd87ff;
+                    text-decoration: underline;
+                }
             }
 
             &__title{
+                margin-bottom: 20px;
                 width: 100%;
                 font-size: clamp(30px,3.5vw + 1vh,80px);
+            }
+
+            &__txt{
+                color: #afafaf;
             }
 
             &__btn-container{
@@ -118,8 +134,8 @@ import CleanBtn from "./cleanBtn.astro";
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background-color: rgb(20 20 20);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            // background-color: rgb(20 20 20);
+            // border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
 
             &::before{
@@ -150,7 +166,7 @@ import CleanBtn from "./cleanBtn.astro";
     }
 </style>
 
-<script is:inline>
+<!-- <script is:inline>
     const handleOnMouseMove = e =>{
         const { currentTarget: target } = e;
 
@@ -163,4 +179,4 @@ import CleanBtn from "./cleanBtn.astro";
     }
 
     document.querySelector('.article__card').onmousemove = e => handleOnMouseMove(e);
-</script>
+</script> -->
