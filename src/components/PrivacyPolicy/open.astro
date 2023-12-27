@@ -1,0 +1,144 @@
+---
+const {title} = Astro.props;
+---
+
+<div class="open-container">
+    <hr>
+    <div class="open-container__static-container">
+        <h1 class="open-container__static-container__title">{title}</h1>
+        <p class="open-container__static-container__img">+</p>
+    </div>
+    <div class="open-container__temporal-container">
+        <slot name="body" class="open-container__temporal-container__body"/>
+    </div>
+    <slot name="line">
+</div>
+
+<style>
+    </style>
+    
+<style lang="scss">
+    @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap');
+
+    .open-container{
+        width: 60vw;
+
+        &__static-container{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            width: 60vw;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            transition: all .1 s;
+
+            &__title{
+                font-weight: 500;
+            }
+
+            &__img{
+                font-size: 50px;
+                align-self: center;
+                margin-bottom: 10px;
+                user-select: none;
+
+                @keyframes rotate{
+                    0%{
+                        transform: rotate(0deg)
+                    }
+
+                    100%{
+                        transform: rotate(45deg);
+                    }
+                }
+
+                @keyframes desrotate{
+                    0%{
+                        transform: rotate(45deg)
+                    }
+
+                    100%{
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+            &:hover{
+                cursor: pointer;
+                color: #a252ff;
+            }
+        }
+
+        &__temporal-container{
+            display: none;
+            margin-bottom: 30px;
+
+            @keyframes eliminate{
+                to{
+                    opacacity: .5;
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .open-container{
+            width: 300px;
+            margin-bottom: 40px;
+
+            &__static-container{
+                width: 300px;
+
+                &__title{
+                    font-size: 30px;
+                }
+            }
+
+            &__temporal-container{
+                widows: 300px;
+                margin-top: 40px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 801px) and (max-width: 900px){
+        .open-container{
+            width: 600px;
+            margin-bottom: 40px;
+
+            &__static-container{
+                width: 600px;
+
+                &__title{
+                    font-size: 30px;
+                }
+            }
+
+            &__temporal-container{
+                widows: 600px;
+                margin-top: 40px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 800px){
+        .open-container{
+            width: 600px;
+            margin-bottom: 40px;
+
+            &__static-container{
+                width: 600px;
+
+                &__title{
+                    font-size: 30px;
+                }
+            }
+
+            &__temporal-container{
+                widows: 600px;
+                margin-top: 40px;
+            }
+        }
+    }
+</style>
