@@ -4,17 +4,17 @@ import InfoCard from "./infoCard.astro";
 
 <article class="article">
     <div class="article__title-container">
-        <h1 class="article__title-container__title">Somos los mejores</h1>
+        <h1 class="article__title-container__title">Somos los <span class="article__title-container__title__gradient-txt">mejores</span></h1>
         <p class="article__title-container__subtitle">¿Por qué? Nos diferenciamos de los demás</p>
     </div>
         <div class="article__content-c">
             <div class="article__card-container">
                 <InfoCard icon="fa-gear" bTxt="Maquinaria y mineria de última generación." txt="Lideramos la industria al utilizar tecnologías energéticamentes eficientes garantizando una mineria de Bitcoin respetuosa con el medio ambiente"></InfoCard>
                 <InfoCard icon="fa-shield" bTxt="Seguridad de Vanguardia." txt="Implementamos medidas de seguridad de última generación para proteger activos y la red blockchain"></InfoCard>
-                <InfoCard icon="fa-eye" bTxt="Maquinaria y mineria de última generación." txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"></InfoCard>
+                <InfoCard icon="fa-eye" bTxt="Tecnología de eficiencia energética" txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"></InfoCard>
             </div>
             <div class="article__img-container">
-                <img src="https://cdn.discordapp.com/attachments/973568724722389052/1185917157981294604/motherboard-panel-electronic-device-or-main-board-industrial-technology-image-within-industrial-machinery-or-a-circuit-board-cpu-or-processor-chip-on-a-circuit-board-3d-rendering-photo.png?ex=65915a6b&is=657ee56b&hm=a475b859a2423cdb079936110877ed77a0de03689237761f6810e1a82d087ed3&" alt="MineBest" class="article__img">
+                <img src="https://cdn.discordapp.com/attachments/973568724722389052/1189344474262933554/pexels-craig-dennis-57007.jpg?ex=659dd25b&is=658b5d5b&hm=6191add7a481a57d81be3b4f0e04ed3564f3af01d82eeeadfc2430ae2fcb1d36&" alt="MineBest" class="article__img">
             </div>
         </div>
 </article>
@@ -29,7 +29,14 @@ import InfoCard from "./infoCard.astro";
             &__title{
                 color: #fff;
                 width: 90vw;
-                font-size: clamp(30px,3.5vw + 1vh,80px);
+                font-size: clamp(35px,3.5vw + 1vh,80px);
+
+                &__gradient-txt{
+                    background: rgb(251,211,252);
+                    background: linear-gradient(87deg, rgba(251,211,252,1) 0%, rgba(189,44,241,1) 100%);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                }
             }
 
             &__subtitle{
@@ -94,7 +101,9 @@ import InfoCard from "./infoCard.astro";
 
 <script is:inline>
     const infoCardArr = document.querySelectorAll('.info-card');
-    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1185917157981294604/motherboard-panel-electronic-device-or-main-board-industrial-technology-image-within-industrial-machinery-or-a-circuit-board-cpu-or-processor-chip-on-a-circuit-board-3d-rendering-photo.png?ex=65915a6b&is=657ee56b&hm=a475b859a2423cdb079936110877ed77a0de03689237761f6810e1a82d087ed3&", "https://cdn.discordapp.com/attachments/973568724722389052/1185922081586679958/gettyimages-1390868080-lista_7326843_20220810131032.png?ex=65915f01&is=657eea01&hm=c38bcd1b1b2c8a5e9ec32b83777341378db14d9b5db8fd7842ff17425995bf72&", "https://cdn.discordapp.com/attachments/973568724722389052/1185922274193313912/THUMBNAIL_GRANGES_BITCOIN.png?ex=65915f2f&is=657eea2f&hm=4f23a9dc40cdc59be88834f6ec2c8a502b09cfe96b950f5614a7c1bb0fe3a44d&"];
+    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1189344474262933554/pexels-craig-dennis-57007.jpg?ex=659dd25b&is=658b5d5b&hm=6191add7a481a57d81be3b4f0e04ed3564f3af01d82eeeadfc2430ae2fcb1d36&", 
+    "https://cdn.discordapp.com/attachments/973568724722389052/1189352548189098044/pexels-muhammed-ensar-10725897.jpg?ex=659dd9e0&is=658b64e0&hm=9ade87060ca80275905ecc41ea70262307e8cede44d0b61348364a7dd0c22077&", 
+    "https://cdn.discordapp.com/attachments/973568724722389052/1189354066837520524/pexels-panumas-nikhomkhai-1148820.jpg?ex=659ddb4a&is=658b664a&hm=2d0358a95e8f781036c47459744586e1b2ccd8756d9702807d6d588148c6373e&"];
     const changeImage = document.querySelector('.article__img');
     for (let i = 0; i < infoCardArr.length; i++){
         infoCardArr[i].addEventListener('mouseover', () =>{
