@@ -7,7 +7,7 @@ import FourthSection from "./fourthSection.astro";
 ---
 
 <main class="main">
-    <section class="main__section" id="s1">
+    <section class="main__section main__section--1" id="s1">
         <Video></Video>
     </section>
     <section class="main__section main__section--2" id="s2">
@@ -16,11 +16,9 @@ import FourthSection from "./fourthSection.astro";
     <section class="main__section main__section--3" id="s3">
         <SecondSection></SecondSection>
     </section>
-    <hr>
     <section class="main__section main__section--4" id="s4">
         <ThirdSection></ThirdSection>
     </section>
-    <hr class="remove-hr">
     <section class="main__section main__section--5" id="s5">
         <FourthSection></FourthSection>
     </section>
@@ -28,7 +26,8 @@ import FourthSection from "./fourthSection.astro";
 
 <style lang="scss">
     .main{
-        margin-bottom: 150px;
+        // margin-top: 100px;
+        // margin-bottom: 150px;
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -38,28 +37,53 @@ import FourthSection from "./fourthSection.astro";
             width: 100vw;
         }
 
+        &__section--1{
+            background-color: #161616;
+            padding-bottom: 70px;
+        }
+
         &__section--2{
-            margin-bottom: 150px;
+            background-color: #1D1D1D;
+            padding-bottom: 70px;
+            // margin-bottom: 150px;
         }
 
         &__section--3{
-            margin-bottom: 100px;
+            padding-top: 70px;
+            padding-bottom: 70px;
+            background-color: #161616;
+            // margin-bottom: 100px;
         }
 
         &__section--4{
+            // margin-top: 50px;
+            // margin-bottom: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: #1D1D1D;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         &__section--5{
+            background-color: #161616;
             position: relative;
-            margin-top: 100px;
+            padding-top: 100px;
+            padding-bottom: 50px;
+            // margin-top: 100px;
         }
     }
 
     @media only screen and (max-width: 480px){
         .main{
+
+            &__section--3{
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: #161616;
+                // margin-bottom: 100px;
+            }
 
             &__section--5{
                 margin-top: 00px;
@@ -68,7 +92,7 @@ import FourthSection from "./fourthSection.astro";
     }
 </style>
 
-<script is:inline>
+<!-- <script is:inline>
     const viewBtn = document.querySelector('.view-btn');
     const noVisible = document.querySelector('.article__txt__no-visible');
     const arrow = document.querySelector('.arrow');
@@ -107,4 +131,4 @@ import FourthSection from "./fourthSection.astro";
         }
     });
 
-</script>
+</script> -->
