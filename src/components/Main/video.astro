@@ -28,7 +28,7 @@
             position: absolute;
             width: 90vw;
             height: calc(.5625 * 90vw);
-            background-color: #1a1a1a;
+            background: url("https://cdn.discordapp.com/attachments/973568724722389052/1189328462771662958/343333.png?ex=659dc372&is=658b4e72&hm=6b92b339f5276f6ff9d6341e6e0906a648bd77c7aac8c302dcaeb1a9d95a85b2&");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             display: flex;
@@ -53,6 +53,19 @@
                 }
             }
 
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .video-container{
+
+            &__cover-container{
+
+                &__play{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
         }
     }
 </style>
