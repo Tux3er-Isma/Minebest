@@ -1,3 +1,7 @@
+---
+import VideoBtn from "./videoBtn.astro";
+---
+
 <div class="video-container">
     <video controls class="video-container__video">
         <source src="/video.mp4" type="video/mp4">
@@ -5,6 +9,9 @@
       </video>
       <div class="video-container__cover-container">
         <img class="video-container__cover-container__play" src="https://cdn.discordapp.com/attachments/973568724722389052/1182613067159326730/image.png?ex=6585553f&is=6572e03f&hm=8cf319ffdc6ceac3f9b6ad16c77fc41d9628eaf5c0c00ba0604a4ac291a092ab&" alt="Play">
+      </div>
+      <div class="btn-container">
+        <VideoBtn></VideoBtn>
       </div>
 </div>
 
@@ -14,6 +21,7 @@
         height: calc(.5625 * 90vw);
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         width: 100vw;
         position: relative;
 
@@ -67,6 +75,11 @@
                 }
             }
         }
+    }
+
+    .btn-container{
+        padding-top: 100px;
+        margin-top: 100px;
     }
 </style>
 
