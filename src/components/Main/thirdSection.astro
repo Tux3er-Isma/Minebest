@@ -1,232 +1,166 @@
 ---
-import ReadMore from "./readMore.astro";
+import CleanBtn from "./cleanBtn.astro";
 ---
 
-<div class="mega-wrapper">
-    <picture class="wrapper-img">
-        <img src="https://cdn.discordapp.com/attachments/973568724722389052/1188503654395822111/1.png?ex=659ac348&is=65884e48&hm=da9d7e31fee748cd1c488b0522936a233ee59a0a0ff141773fbb596945f6edc9&" alt="MineBest" class="wrapper-img__img">
+<article class="article">
+    <picture class="article__img-container">
+        <img src="https://cdn.discordapp.com/attachments/1141017064618868737/1189301023811047514/pexels-alesia-kozik-6770775.jpg?ex=659da9e4&is=658b34e4&hm=c876100b0dd6b84128d364d92a7c0484a4cdcc685a06d9d93d8c9e706bacb33b&" alt="MineBest" class="article__img-container__img">
     </picture>
-    <div class="wrapper">
-        <article class="article">
-            <h1 class="article__title">Sobre Nosotros</h1>
-            <p class="article__txt">
-                Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación, confianza y compromiso con nuestros clientes.
-                <br><br>
-        Somos un equipo apasionado de profesionales con un objetivo común: ofrecer soluciones sólidas y confiables en el emocionante campo de la minería de Bitcoin. Nuestra dedicación a la excelencia y nuestra mentalidad orientada al futuro nos distinguen en este dinámico paisaje digital.
-                <br><br>
-                <p class="article__txt__no-visible">
-                    t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved<br><br> over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        <div class="article__card">
+            <div class="article__card__content-container">
+                <h1 class="article__card__title">Sobre Nosotros</h1>
+                <p class="article__card__txt">
+                    Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación, confianza y compromiso con nuestros clientes.
+                    <br><br>
                 </p>
-            </p>
-            <div class="view-btn">
-                <ReadMore></ReadMore>
+                <div class="article__card__btn-container">
+                    <CleanBtn></CleanBtn>
+                </div>
             </div>
-        </article>
-    </div>
-</div>
+        </div>
+</article>
 
 <style lang="scss">
-    .mega-wrapper{
-        width: 70vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .wrapper-img{
-        position: relative;
-    }
-
-    .wrapper-img__img{
-        width: 25vw;
-        height: 90vh;
-        object-fit: cover;
-    }
-
-    .wrapper{
-        width: 70vw;
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        align-self: flex-start;
-    }
-
     .article{
-        align-self: flex-end;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100vw;
+        height: 70vh;
         align-items: center;
-        height: 60vh;
-        width: 40vw;
-        color: #fff;
-        text-align: left;
-        
-        &__title{
-            width: 40vw;
-            margin-bottom: 50px;
-            align-self: flex-end;
-            font-size: clamp(30px,3.5vw + 1vh,80px);
-        }
 
-        &__txt{
-            transition: all .5s;
-
-            &__no-visible{
-                height: 250px;
-                opacity: 0;
-
-                @keyframes text-a{
-                    from{
-                        opacity: 0;
-                    }
-                    to{
-                        opacity: 1;
-                    }
-                }
-
-                @keyframes text-d{
-                    from{
-                        opacity: 1;
-                    }
-                    to{
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-    }
-
-    .view-btn{
-        position: relative;
-        top: -202px;
-    }
-    
-    @keyframes go-b{
-            0%{
-                top: -232px;
-            }
-            100%{
-                top: 30px;
-            }
-        }
-
-        @keyframes go-t{
-            0%{
-                top: 30px;
-            }
-            100%{
-                top: -232px;
-            }
-        }
-
-    @media only screen and (min-width: 1600px){
-    }
-
-    @media only screen and (min-width: 321px) and (max-width: 480px){
-        .mega-wrapper{
-            flex-direction: column;
-        }
-
-        .wrapper{
-            width: 80vw;
-            align-items: center;
-            order: 1;
-        }
-
-        .wrapper-img{
-            order: 2;
+        &__img-container{
+            position: relative;
+            right: 100px;
+            height: 100%;
 
             &__img{
-                width: 80vw;
+                height: 100%;
+                border-radius: 30px;
+                width: 50vw;
+                height: 70vh;
+                object-fit: cover;
             }
         }
 
-        .view-btn{
-            top: -235px;
-        }
+        &__card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(20 20 20);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 20px;
+            position: relative;
+            right: 200px;
+            width: 630px;
+            height: 45vh;
+            &::before{
+                justify-self: center;
+                background: radial-gradient(
+                400px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.06),
+                transparent 40%
+            );
+            border-radius: inherit;
+            content: "";
+            left: 0px;
+            width: 630px;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            }
 
-
-        .article{
-            width: 80vw;
+            &__content-container{
+                width: 630px;
+                height: 100%;
+                display: flex;
+                padding: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
 
             &__title{
                 width: 100%;
+                font-size: clamp(30px,3.5vw + 1vh,80px);
             }
-            // text-align: right;
-        }
 
-        @keyframes go-b{
-            0%{
-                top: -232px;
-            }
-            100%{
-                top: 30px;
-            }
-        }
-
-        @keyframes go-t{
-            0%{
-                top: 130px;
-            }
-            100%{
-                top: -232px;
+            &__btn-container{
+                position: relative;
+                z-index: 20;
             }
         }
     }
 
-    @media only screen and (max-width: 320px){
-        .mega-wrapper{
-            margin-bottom: 200px;
-            flex-direction: column;
-        }
+    @media only screen and (max-width: 480px){
+        .article{
+        // display: flex;
+        // justify-content: center;
+        // width: 100vw;
+        // height: 70vh;
+        // align-items: center;
+        width: 100vw;
+        display: flex;
+        height: 400px;
+        justify-content: center;
 
-        .wrapper{
-            width: 80vw;
-            align-items: center;
-            order: 1;
-            order: 1;
-        }
 
-        .wrapper-img{
+        &__img-container{
             display: none;
-            order: 2;
+        }
 
-            &__img{
-                width: 80vw;
+        &__card{
+            position: relative;
+            left: 1px;
+            width: 335px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(20 20 20);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+
+            &::before{
+                width: 335px;
             }
-        }
 
-        .view-btn{
-            top: -235px;
-        }
-
-
-        .article{
-            width: 80vw;
+            &__content-container{
+                width: 325px;
+                height: 100%;
+                display: flex;
+                padding: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
 
             &__title{
                 width: 100%;
+                font-size: clamp(35px,3.5vw + 1vh,80px);
             }
-        }
 
-        @keyframes go-b{
-            0%{
-                top: -232px;
-            }
-            100%{
-                top: 185px;
+            &__btn-container{
+                position: relative;
+                z-index: 20;
             }
         }
-
-        @keyframes go-t{
-            0%{
-                top: 130px;
-            }
-            100%{
-                top: -232px;
-            }
-        }
+    }
     }
 </style>
+
+<script is:inline>
+    const handleOnMouseMove = e =>{
+        const { currentTarget: target } = e;
+
+        const rect = target.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+    }
+
+    document.querySelector('.article__card').onmousemove = e => handleOnMouseMove(e);
+</script>
