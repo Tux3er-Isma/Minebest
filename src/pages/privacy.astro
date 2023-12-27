@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/LayoutPrivacy.astro";
+import Open from "../components/PrivacyPolicy/open.astro";
+---
+
+<Layout title="MineBest - Privacy">
+    <h1 class="title" id="header" transition:name="pp">Política de privacidad</h1>
+    <h3 class="subtitle">Fecha de última actualización: diciembre 2023</h3>
+    <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem atque vel minus laboriosam inventore esse doloremque illum error? Corporis architecto totam, explicabo illo ducimus enim sapiente. Cumque doloribus eaque quo.</p>
+    <br>
+    <br>
+    <p class="txt">Si tienes alguna pregunta, <a href="/privacy" class="txt__link">ponte en contacto con nosotros.</a></p>
+    <br>
+    <br>
+    <b></b>
+    <Open title="Información que Recopilamos">
+        <p slot="body" class="body-txt body">Recopilamos la siguiente información cuando usted visita nuestra Landing Page y proporciona datos a través de nuestros formularios de contacto:</p>
+        <ul slot="body" class="body-list body">
+            <br>
+            <li class="body-list__items">Nombre y Apellidos</li>
+            <li class="body-list__items">Dirección de correo electrónico</li>
+            <li class="body-list__items">Número de teléfono</li>
+            <li class="body-list__items">Comentarios o preguntas adicionales (opcional)</li>
+        </ul>
+    </Open>
+    <Open title="Uso de la Información">
+        <p slot="body" class="body-txt body">Utilizamos la información recopilada para los siguientes fines:</p>
+        <ul slot="body" class="body-list body">
+            <br>
+            <li class="body-list__items">Para responder a su consulta y ponerlo en contacto con un consultor experto en inversiones de oro y otros metales preciosos.</li>
+            <li class="body-list__items">Para enviarle información relacionada con nuestros servicios y ofertas, si ha dado su consentimiento para recibirla.</li>
+            <li class="body-list__items">Para mejorar y personalizar su experiencia en nuestra página web.</li>
+            <li class="body-list__items">Para cumplir con las obligaciones legales y reglamentarias aplicables.</li>
+        </ul>
+    </Open>
+    <Open title="Compartir Información">
+        <p slot="body" class="body-txt body">No compartiremos su información personal con terceros sin su consentimiento expreso, a menos que estemos legalmente obligados a hacerlo.</p>
+    </Open>
+    <Open title="Seguridad de los Datos">
+        <p  slot="body" class="body body-txt">Tomamos medidas para proteger su información personal y garantizar su confidencialidad. Sin embargo, la transmisión de información a través de Internet no es completamente segura, y no podemos garantizar la seguridad de los datos transmitidos a través de nuestra Landing Page.</p>
+    </Open>
+    <Open title="Sus Derechos">
+        <p slot="body" class="body-txt body">Usted tiene ciertos derechos con respecto a sus datos personales, incluyendo el derecho a acceder, corregir, eliminar y limitar el procesamiento de sus datos. Puede ejercer estos derechos enviándonos una solicitud a través de la dirección de correo electrónico proporcionada a continuación.</p>
+    </Open>
+    <Open title="Cambios en esta Política de Privacidad">
+        <p slot="body" class="body-txt body">Nos reservamos el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Cualquier cambio importante será notificado en nuestra página web.</p>
+    </Open>
+    <Open title="Contacto">
+        <p slot="body" class="body-txt body">Si tiene alguna pregunta o preocupación sobre esta política de privacidad o sobre sus datos personales, por favor contáctenos a través de la siguiente información de contacto:</p>
+        <ul slot="body" class="body-list body">
+            <br>
+            <li class="body-list__items">Consulting Investment Resource, S.L.</li>
+            <li class="body-list__items">CIF: B-10522225</li>
+            <li class="body-list__items">Dirección: Rambla Nova, 41 4 - 1</li>
+            <li class="body-list__items">CP 43004 Tarragona</li>
+            <li class="body-list__items">Correo Electrónico: <a href="mailto:fabio@consultingcir.com" class="body-link">fabio@consultingcir.com</a> </li>
+        </ul>
+        <hr slot="line">
+    </Open>
+    <p class="txt txt--2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At molestias suscipit exercitationem distinctio iusto commodi libero vero quas illo qui corrupti incidunt facere magni, optio nobis nostrum maxime architecto doloremque?</p>
+</Layout>
+
+<style lang="scss">
+    *{
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+    }
+
+    body{
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .body-txt{
+        font-size: 20px;
+    }
+
+    .body-list{
+        margin-left: 40px;
+
+        &__items{
+            font-size: 20px;
+        }
+    }
+
+    .body-link{
+        color: #06f;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .title, .subtitle, .txt{
+        text-align: center;
+    }
+
+    .title{
+        margin-top: 70px;
+        margin-bottom: 22px;
+        // font-size: 100px;
+        width: 100vw;
+        font-size: clamp(35px,3.5vw + 1vh,80px);
+        letter-spacing: -.003em;
+    }
+
+    .subtitle{
+        margin-bottom: 40px;
+        font-size: 23px;
+    }
+
+    .txt{
+        width: 700px;
+        font-size: 22px;
+
+        &__link{
+            color: #a252ff;
+
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        &__link--d{
+            margin-top: 30px;
+            margin-bottom: 85px;
+        }
+    }
+
+    .txt--2{
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .icon{
+        user-select: none;
+        width: 80px;
+        // margin-bottom: 22px;
+        // margin-top: 20px;
+    }
+
+    .footer{
+        width: 100vw;
+    }
+
+    @media only screen and (max-width: 480px){
+        .txt{
+            width: 300px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+
+<script is:inline>
+    const openCArr = document.querySelectorAll('.open-container');
+    openCArr.forEach(container =>{
+        let selected = false;
+        container.childNodes[1].addEventListener('click', () =>{
+            if (selected == false){
+                selected = true;
+                const icon = container.childNodes[1].childNodes[1];
+                icon.style.animation = 'rotate .4s forwards';
+                const temporalContainer = container.childNodes[2];
+                temporalContainer.style.display  = 'block';
+            } else if (selected == true) {
+                selected = false;
+                const icon = container.childNodes[1].childNodes[1];
+                icon.style.animation = 'desrotate .4s forwards';
+                const temporalContainer = container.childNodes[2];
+                temporalContainer.style.display = 'none';
+            }
+        })
+    })
+</script>
