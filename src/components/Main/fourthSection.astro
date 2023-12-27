@@ -4,7 +4,7 @@ import Pyramid from "./Pyramid.astro";
 ---
 
 <article class="article">
-    <h1 class="article__title">¿Quieres empezar <br>a ganar minando?</h1>
+    <h1 class="article__title">¿Quieres empezar a<br> <span class="article__title__gradient-txt">ganar minando</span>?</h1>
     <Form></Form>
 </article>
 
@@ -17,8 +17,17 @@ import Pyramid from "./Pyramid.astro";
         &__title{
             color: #fff;
             width: 100vw;
-            font-size: clamp(30px,3.5vw + 1vh,80px);
+            font-size: clamp(35px,3.5vw + 1vh,80px);
             text-align: center;
+
+            &__gradient-txt{
+                background: rgb(251,211,252);
+                    background: linear-gradient(87deg, rgba(251,211,252,1) 0%, rgba(189,44,241,1) 100%);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+            }
         }
+
     }
+
 </style>
