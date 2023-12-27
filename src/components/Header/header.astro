@@ -50,8 +50,10 @@ import StaticsContainer from "./staticsContainer.astro";
     }
 
     .header{
+        padding-bottom: 50px;
         width: 100vw;
         display: flex;
+        background-color: #1d1d1d;
         flex-direction: column;
 
         &__img{
@@ -60,11 +62,13 @@ import StaticsContainer from "./staticsContainer.astro";
             object-fit: cover;
             object-position: top;
             position: absolute;
-            z-index: -1;
+            z-index: 1;
             top: 0px;
         }
 
         &__info-container{
+            position: relative;
+            z-index: 2;
             margin-bottom: 15vh;
             display: flex;
             flex-direction: column;
@@ -88,6 +92,8 @@ import StaticsContainer from "./staticsContainer.astro";
         }
 
         &__statics-container{
+            position: relative;
+            z-index: 2;
            display: flex;
            justify-content: space-around;
            align-items: center;
@@ -114,11 +120,17 @@ import StaticsContainer from "./staticsContainer.astro";
                 }
 
                 &__btn-container{
-                    height: 30vh;
+                    height: 25vh;
                     width: 70vw;
+                    margin-bottom: 70px;
 
                     justify-content: center;
                 }
+            }
+
+            &__statics-container{
+                border-radius: 20px;
+                padding-bottom: 40px;
             }
         }
     }
