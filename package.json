@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.0.1"
+    "astro": "^4.0.1",
+    "resend": "^2.1.0"
   },
   "devDependencies": {
     "sass": "^1.69.5"
