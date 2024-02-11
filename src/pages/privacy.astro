@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/LayoutPrivacy.astro";
-import Open from "../components/PrivacyPolicy/open.astro";
+import Open from "../components/PrivacyPolicy/Open.astro";
 ---
 
 <Layout title="MineBest - Privacy">
@@ -160,21 +160,24 @@ import Open from "../components/PrivacyPolicy/open.astro";
 <script is:inline>
     const openCArr = document.querySelectorAll('.open-container');
     openCArr.forEach(container =>{
+        console.log(container.childNodes[3].childNodes)
         let selected = false;
-        container.childNodes[1].addEventListener('click', () =>{
+        container.addEventListener('click', () =>{
             if (selected == false){
                 selected = true;
-                const icon = container.childNodes[1].childNodes[1];
+                const icon = container.childNodes[3].childNodes[3];
                 icon.style.animation = 'rotate .4s forwards';
-                const temporalContainer = container.childNodes[2];
+                const temporalContainer = container.childNodes[5];
                 temporalContainer.style.display  = 'block';
             } else if (selected == true) {
                 selected = false;
-                const icon = container.childNodes[1].childNodes[1];
+                const icon = container.childNodes[3].childNodes[3];
                 icon.style.animation = 'desrotate .4s forwards';
-                const temporalContainer = container.childNodes[2];
+                const temporalContainer = container.childNodes[5];
                 temporalContainer.style.display = 'none';
             }
         })
     })
+
+
 </script>
