@@ -139,7 +139,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 			// }	
 		}
 </style>
-
+<!--Scroll Reveal -->
 <script is:inline>
 	/*! @license ScrollReveal v4.0.9
 
@@ -1778,6 +1778,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 	}
 </script>
 
+<!--Preloader -->
 <script is:inline>
 	const btc = document.querySelector('.btc');
 	document.body.style.overflowY = 'hidden';
@@ -1787,6 +1788,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 	})
 </script>
 
+<!--Odometer -->
 <script src="/odometer.js" is:inline></script>
 
 <script is:inline>
@@ -1802,6 +1804,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 	}, 1000)
 </script>
 
+<!--Resend -->
 <script is:inline>
 	const name = document.querySelector("#s5 > article > form > div:nth-child(1) > input");
 	const email = document.querySelector("#s5 > article > form > div:nth-child(2) > input");
@@ -1811,7 +1814,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 
 	sendBtn.addEventListener('click', async () =>{
 		try {
-			const res = await fetch("api/sendEmail.json", {
+			const res = await fetch("/api/sendEmail.json", {
 				method: "POST",
 				headers: {
 					"Content-Type": "aplication/json"
