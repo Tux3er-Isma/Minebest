@@ -21,8 +21,9 @@ import VideoBtn from "./videoBtn.astro";
         height: calc(.5625 * 90vw);
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         width: 100vw;
+        flex-direction: column;
         position: relative;
 
         &__video{
@@ -43,6 +44,13 @@ import VideoBtn from "./videoBtn.astro";
             justify-content: center;
             align-items: center;
             border-radius: 20px;
+            margin-top: 10vh;
+        height: calc(.5625 * 90vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
 
             &__play{
                 width: 100px;
@@ -77,10 +85,10 @@ import VideoBtn from "./videoBtn.astro";
         }
     }
 
-    .btn-container{
-        padding-top: 100px;
-        margin-top: 100px;
-    }
+    // .btn-container{
+    //     padding-top: 100px;
+    //     margin-top: 100px;
+    // }
 </style>
 
 <script is:inline>
