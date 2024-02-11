@@ -1708,11 +1708,6 @@ import Bitcoin from "../components/Bitcoin.astro";
 </script>
 
 <script is:inline>
-	if (window.orientation === 90 || window.orientation === -90){
-		alert("Gira tu dispositivo para una mejor experiencia")
-	}
-
-
 	const cardArr = [document.querySelectorAll('.card-container-s')[0], document.querySelectorAll('.card-container-s')[1], document.querySelectorAll('.card-container-s')[2]]
 
     window.sr = ScrollReveal();
@@ -1805,4 +1800,40 @@ import Bitcoin from "../components/Bitcoin.astro";
 	setTimeout(() =>{
 		odometerArr[2].innerHTML = 24
 	}, 1000)
+</script>
+
+<script is:inline>
+	const name = document.querySelector("#s5 > article > form > div:nth-child(1) > input");
+	const email = document.querySelector("#s5 > article > form > div:nth-child(2) > input");
+	const tel = document.querySelector("#s5 > article > form > div:nth-child(3) > input");
+	const message = document.querySelector("#s5 > article > form > div:nth-child(4) > textarea");
+	const sendBtn = document.querySelector("#s5 > article > form > div.form__bc > button");
+
+	sendBtn.addEventListener('click', async () =>{
+		try {
+			const res = await fetch("api/sendEmail.json", {
+				method: "POST",
+				headers: {
+					"Content-Type": "aplication/json"
+				},
+				body: JSON.stringify({
+					from: "noreply@resend.dev",
+					to: "isma.tux3er@gmail.com",
+					subject: "Mensaje desde MineBest",
+					html: `<p>Hola tienes un mensaje de: <strong>${name.value}<strong></p>
+						<p>Su email es: <strong>${email.value}<strong></p>
+						<p>Su numero de telefono es: <strong>${tel.value}<strong></p>
+							<p>Su mensaje es: <strong>${message.value}<strong></p>	`,
+					text: "Hola"
+				})
+			})	
+				const data = await res.json();
+				console.log(data);
+				alert("Su mensaje se ha enviado correctamente");
+
+		} catch (err) {
+				console.error(err);
+				alert("Ha habido un error");
+			}
+	})
 </script>
