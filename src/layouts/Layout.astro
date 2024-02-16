@@ -41,6 +41,14 @@ import Bitcoin from "../components/Bitcoin.astro";
 			<Main></Main>
 			<Footer></Footer>
 		</div>
+		<div class="email-popup">
+			<div class="email-popup__container">
+				<img src="https://cdn.discordapp.com/attachments/973568724722389052/1206555452024954911/bandeja-de-entrada.png?ex=65dc6f54&is=65c9fa54&hm=304c9de07f9aba4df7b0e64d7d296c4117a4d894379c51b2c6878025d4da1fb5&" alt="email" class="email-popup__container__img">
+				<h1 class="email-popup__container__title">¡Gracias!</h1>
+				<p class="email-popup__container__txt">Gracias por confiar en nosotros, nuestro equipo <br> le respondera lo antes posible.</p>
+				<button type="button" class="email-popup__container__btn">Okay</button>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -97,6 +105,55 @@ import Bitcoin from "../components/Bitcoin.astro";
 
 	.no-btc{
 		display: none;
+	}
+
+	.email-popup{
+		width: 100vw;
+		height: 100vh;
+		/* From https://css.glass */
+		background: rgba(9, 8, 12, 0.53);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(16.1px);
+		-webkit-backdrop-filter: blur(16.1px);
+		border: 1px solid rgba(9, 8, 12, 0.3);
+		position: absolute;
+		z-index: 100;
+		display: none;
+		justify-content: center;
+		align-items: center;
+
+		&__container{
+			gap: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&__img{
+				width: 200px;
+			}
+
+			&__title{
+				color: #fff;
+			}
+
+			&__txt{
+				text-align: center;
+				color: #545454;
+			}
+
+			&__btn{
+				border: none;
+				outline: none;
+				background-color: #16141e;
+				color: #7b7484;
+				font-weight: bold;
+				width: 200px;
+				padding: 10px;
+				border-radius: 10px;
+				cursor: pointer;
+			}
+		}
 	}
 
 	::selection{
@@ -1810,10 +1867,15 @@ import Bitcoin from "../components/Bitcoin.astro";
 	const email = document.querySelector("#s5 > article > form > div:nth-child(2) > input");
 	const tel = document.querySelector("#s5 > article > form > div:nth-child(3) > input");
 	const message = document.querySelector("#s5 > article > form > div:nth-child(4) > textarea");
+	const checkBox = document.querySelector("#cbx");
 	const sendBtn = document.querySelector("#s5 > article > form > div.form__bc > button");
+	const btnPopup = document.querySelector('.email-popup__container__btn');
+	const emailPopup = document.querySelector('.email-popup');
 
 	sendBtn.addEventListener('click', async () =>{
-		try {
+		if (name.value == "" || email.value == "" || tel.value == "" || checkBox.checked == false){
+		} else {
+			try {
 			const res = await fetch("/api/sendEmail.json", {
 				method: "POST",
 				headers: {
@@ -1832,11 +1894,18 @@ import Bitcoin from "../components/Bitcoin.astro";
 			})	
 				const data = await res.json();
 				console.log(data);
-				alert("Su mensaje se ha enviado correctamente");
+				emailPopup.style.display = 'flex';
+				emailPopup.style.top = `${window.scrollY}px`;
+				document.body.overfloxY = 'hidden';
 
 		} catch (err) {
 				console.error(err);
-				alert("Ha habido un error");
 			}
+		}
+	})
+
+	btnPopup.addEventListener('click', () =>{
+		emailPopup.style.display = 'none';
+		document.body.overflowY = 'scroll';
 	})
 </script>
