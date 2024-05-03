@@ -1,10 +1,11 @@
 ---
+import Img from "../../assets/section3_img.png";
 import CleanBtn from "./cleanBtn.astro";
 ---
 
 <article class="article">
     <picture class="article__img-container">
-        <img src="https://cdn.discordapp.com/attachments/973568724722389052/1189669818903830618/pexels-energepiccom-159888.jpg?ex=659f015b&is=658c8c5b&hm=1ef67754a9b8e15513d47f5e78b29bd0b6c65aeae20eae91a6ec919beef4ef31&" alt="MineBest" class="article__img-container__img">
+        <img src={Img.src} alt="MineBest" class="article__img-container__img">
     </picture>
         <div class="article__card">
             <div class="article__card__content-container">

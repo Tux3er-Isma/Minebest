@@ -1,4 +1,5 @@
 ---
+import Play from "../../assets/play.png";
 import VideoBtn from "./videoBtn.astro";
 ---
 
@@ -8,7 +9,7 @@ import VideoBtn from "./videoBtn.astro";
         Your browser does not support HTML video.
       </video>
       <div class="video-container__cover-container">
-        <img class="video-container__cover-container__play" src="https://cdn.discordapp.com/attachments/973568724722389052/1182613067159326730/image.png?ex=6585553f&is=6572e03f&hm=8cf319ffdc6ceac3f9b6ad16c77fc41d9628eaf5c0c00ba0604a4ac291a092ab&" alt="Play">
+        <img class="video-container__cover-container__play" src={Play.src} alt="Play">
       </div>
       <div class="btn-container">
         <VideoBtn></VideoBtn>
@@ -37,7 +38,7 @@ import VideoBtn from "./videoBtn.astro";
             position: absolute;
             width: 90vw;
             height: calc(.5625 * 90vw);
-            background: url("https://cdn.discordapp.com/attachments/973568724722389052/1189328462771662958/343333.png?ex=659dc372&is=658b4e72&hm=6b92b339f5276f6ff9d6341e6e0906a648bd77c7aac8c302dcaeb1a9d95a85b2&");
+            background: url("../../assets/cover.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             display: flex;

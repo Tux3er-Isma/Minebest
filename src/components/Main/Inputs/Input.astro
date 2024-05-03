@@ -1,5 +1,5 @@
 ---
-const { label, placeholder, type, size="sm", required="true", asterisk="*", tag }  = Astro.props; 
+const { label, placeholder, type, size="sm", required=true, asterisk="*", tag }  = Astro.props; 
 ---
 
 <div class="inpt-container">
@@ -11,6 +11,18 @@ const { label, placeholder, type, size="sm", required="true", asterisk="*", tag 
     [data-size="lg"]{
         height: 30vh;
     }
+
+//     .inpt-container__inpt:required {
+//     border: 1px solid #ae7bff; // Asegúrate de que el borde sea el mismo que cuando está enfocado
+// }
+
+// .inpt-container__inpt:invalid {
+//     border: 1px solid red; // Puedes cambiar el color a tu preferencia
+// }
+
+// .inpt-container__label__a:required {
+//     color: red; // Color del asterisco cuando es obligatorio
+// }
 
     .inpt-container{
         margin-top: 40px;

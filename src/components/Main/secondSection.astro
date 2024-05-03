@@ -1,4 +1,5 @@
 ---
+import Img1 from "../../assets/section2_img1.jpg";
 import InfoCard from "./infoCard.astro";
 ---
 
@@ -14,7 +15,7 @@ import InfoCard from "./infoCard.astro";
                 <InfoCard icon="fa-eye" bTxt="Tecnología de eficiencia energética" txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"></InfoCard>
             </div>
             <div class="article__img-container">
-                <img src="https://cdn.discordapp.com/attachments/973568724722389052/1189344474262933554/pexels-craig-dennis-57007.jpg?ex=659dd25b&is=658b5d5b&hm=6191add7a481a57d81be3b4f0e04ed3564f3af01d82eeeadfc2430ae2fcb1d36&" alt="MineBest" class="article__img">
+                <img src={Img1.src} alt="MineBest" class="article__img">
             </div>
         </div>
 </article>
@@ -101,9 +102,9 @@ import InfoCard from "./infoCard.astro";
 
 <script is:inline>
     const infoCardArr = document.querySelectorAll('.info-card');
-    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1189344474262933554/pexels-craig-dennis-57007.jpg?ex=659dd25b&is=658b5d5b&hm=6191add7a481a57d81be3b4f0e04ed3564f3af01d82eeeadfc2430ae2fcb1d36&", 
-    "https://cdn.discordapp.com/attachments/973568724722389052/1189352548189098044/pexels-muhammed-ensar-10725897.jpg?ex=659dd9e0&is=658b64e0&hm=9ade87060ca80275905ecc41ea70262307e8cede44d0b61348364a7dd0c22077&", 
-    "https://cdn.discordapp.com/attachments/973568724722389052/1189354066837520524/pexels-panumas-nikhomkhai-1148820.jpg?ex=659ddb4a&is=658b664a&hm=2d0358a95e8f781036c47459744586e1b2ccd8756d9702807d6d588148c6373e&"];
+    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1189352548189098044/pexels-muhammed-ensar-10725897.jpg?ex=66361f20&is=6634cda0&hm=e1f13d87eaac4ed69f247b28f4e65f35f58fb688e0e7c3ec0c0f8cac8d23f38e&", 
+                        "https://cdn.discordapp.com/attachments/973568724722389052/1189353789317206066/pexels-manuel-geissinger-325229.jpg?ex=66362048&is=6634cec8&hm=b9283151c51184757e10fee94ea394b39cd2e0ba46ec6e1fc8288776ac0680a8&",
+                        "https://cdn.discordapp.com/attachments/973568724722389052/1189354066837520524/pexels-panumas-nikhomkhai-1148820.jpg?ex=6636208a&is=6634cf0a&hm=0bffe551fe92dfad8cffe1b76826a8ad550e920a29f658a15649e1b92f166fa8&"];
     const changeImage = document.querySelector('.article__img');
     for (let i = 0; i < infoCardArr.length; i++){
         infoCardArr[i].addEventListener('mouseover', () =>{
