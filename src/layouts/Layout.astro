@@ -1,6 +1,6 @@
 ---
 //Astro props
-const { title } = Astro.props;
+const { title, apiKey, email } = Astro.props;
 
 //View Transitions
 import { ViewTransitions } from "astro:transitions";
@@ -40,6 +40,8 @@ import Bitcoin from "../components/Bitcoin.astro";
 			<Header></Header>
 			<Main></Main>
 			<Footer></Footer>
+			<p class="apikey">{apiKey}</p>
+			<p class="email-s">{email}</p>
 		</div>
 		<div class="email-popup">
 			<div class="email-popup__container">
@@ -1872,6 +1874,13 @@ import Bitcoin from "../components/Bitcoin.astro";
 	const btnPopup = document.querySelector('.email-popup__container__btn');
 	const emailPopup = document.querySelector('.email-popup');
 
+	const apiKey = document.querySelector('.apikey');
+	const apiInpt = document.querySelector('.api-inpt');
+
+	const emailS = document.querySelector('.email-s');
+
+	apiInpt.value = apiKey.innerHTML
+
 	sendBtn.addEventListener('click', async () =>{
 		if (name.value == "" || email.value == "" || tel.value == "" || checkBox.checked == false){
 		} else {
@@ -1883,13 +1892,14 @@ import Bitcoin from "../components/Bitcoin.astro";
 				},
 				body: JSON.stringify({
 					from: "noreply@resend.dev",
-					to: "isma.tux3er@gmail.com",
+					to: emailS.innerHTML,
 					subject: "Mensaje desde MineBest",
 					html: `<p>Hola tienes un mensaje de: <strong>${name.value}<strong></p>
 						<p>Su email es: <strong>${email.value}<strong></p>
 						<p>Su numero de telefono es: <strong>${tel.value}<strong></p>
 							<p>Su mensaje es: <strong>${message.value}<strong></p>	`,
-					text: "Hola"
+					text: "Hola",
+					api: apiInpt.value
 				})
 			})	
 				const data = await res.json();

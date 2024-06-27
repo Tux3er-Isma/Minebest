@@ -1,17 +1,15 @@
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
+import * as apiKeys from './apikeys.json';
 
 let part1 = "re_";
 let part2 = "AoekZ6X8_";
 let part3 = "JghmerihvW3XbE8H4YJPhDpx";
 
-const apiKey = part1 + part2 + part3;
-
-const resend = new Resend(apiKey);
-
 export const POST: APIRoute = async ({ params, request }) => {
   const body = await request.json();
-  const { to, from, html, subject, text } = body;
+  const { to, from, html, subject, text, api } = body;
+  const resend = new Resend(api);
 
   if (!to || !from || !html || !subject || !text) {
     return new Response(null, {
