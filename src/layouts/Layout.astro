@@ -1,6 +1,6 @@
 ---
 //Astro props
-const { title, apiKey, email } = Astro.props;
+const { title, part1, part2, email } = Astro.props;
 
 //View Transitions
 import { ViewTransitions } from "astro:transitions";
@@ -40,7 +40,7 @@ import Bitcoin from "../components/Bitcoin.astro";
 			<Header></Header>
 			<Main></Main>
 			<Footer></Footer>
-			<p class="apikey">{apiKey}</p>
+			<p class="apikey">{part1 + part2}</p>
 			<p class="email-s">{email}</p>
 		</div>
 		<div class="email-popup">
