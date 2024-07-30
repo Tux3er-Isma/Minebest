@@ -1,104 +1,186 @@
 ---
-import Play from "../../assets/play.png";
-import VideoBtn from "./videoBtn.astro";
+import Cover from "../../assets/cover.jpg";
 ---
 
-<div class="video-container">
-    <video controls class="video-container__video">
-        <source src="/video.mp4" type="video/mp4">
-        Your browser does not support HTML video.
-      </video>
-      <div class="video-container__cover-container">
-        <img class="video-container__cover-container__play" src={Play.src} alt="Play">
-      </div>
-      <div class="btn-container">
-        <VideoBtn></VideoBtn>
-      </div>
+<div class="cover-container">
+    <div class="cover-container__part--one">
+        <h1 class="cover-container__title">
+            ¿Qué es la minería <br /><span class="cover-container__title__big"
+                >BITCOIN</span
+            >?
+        </h1>
+        <p class="cover-container__txt">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor.
+        </p>
+        <button type="button" class="cover-container__btn"
+            ><i class="fa-solid fa-play cover-container__btn__icon"></i> reproducir</button
+        >
+    </div>
+    <div class="cover-container__part--two">
+        <img src={Cover.src} alt="Minebest" class="cover-container__cover" />
+    </div>
 </div>
-
 <style lang="scss">
-    .video-container{
-        margin-top: 10vh;
-        height: calc(.5625 * 90vw);
+    .cover-container {
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        flex-direction: column;
-        position: relative;
+        /* From https://css.glass */
+        background: rgb(56 69 101 / 28%);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 90vw;
+        border-radius: 30px;
 
-        &__video{
-            display: none;
-            width: 90vw;
-            height: calc(.5625 * 90vw);
-            border-radius: 20px;
+        &__part--one,
+        &__part--two {
+            width: 40vw;
         }
 
-        &__cover-container{
-            position: absolute;
-            width: 90vw;
-            height: calc(.5625 * 90vw);
-            background: url("../../assets/cover.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
+        &__part--one {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        &__subtitle {
+            color: #b1b0b0;
+            font-weight: 400;
+        }
+
+        &__title {
+            font-size: 40px;
+            font-weight: 600;
+
+            &__big {
+                font-weight: 900;
+            }
+        }
+
+        &__txt {
+            width: 30vw;
+            color: #b1b0b0;
+        }
+
+        &__btn {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            border: 1px solid #fff;
+            color: #fff;
+            display: flex;
             align-items: center;
-            border-radius: 20px;
-            margin-top: 10vh;
-        height: calc(.5625 * 90vw);
-        display: flex;
+            justify-content: center;
+            width: 13vw;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+            background-color: #808080;
+            font-size: 16px;
+
+            &:hover {
+                scale: 1.1;
+            }
+
+            &__icon {
+                margin-right: 10px;
+                font-size: 20px;
+            }
+        }
+
+        &__cover {
+            width: 40vw;
+            border-radius: 30px;
+        }
+    }
+
+    .modal {
+        width: 100vw;
+        height: 100vh;
+        display: none;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        position: relative;
+        position: absolute;
+        z-index: 9;
+    }
 
-            &__play{
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                transition: all .5s;
+    @media only screen and (max-width: 900px) {
+        .cover-container {
+            flex-direction: column;
+
+            &__part--one,
+            &__part--two {
+                width: 90vw;
+            }
+
+            &__part--one {
+                align-items: center;
+            }
+
+            &__part--two{
                 display: flex;
                 justify-content: center;
-                align-items: center;
-
-                &:hover{
-                    box-shadow: 0px 0px 52px 0px #8a11edd9;
-                }
             }
 
+            &__title{
+                text-align: center;
+            }
+
+            &__btn {
+                width: 60vw;
+            }
+
+            &__txt {
+                text-align: center;
+                width: 80%;
+            }
+
+            &__cover {
+                margin-top: 40px;
+                width: 80vw;
+            }
         }
     }
 
-    @media only screen and (max-width: 480px){
-        .video-container{
+    @media only screen and (min-width: 1600px) {
+        .cover-container {
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            width: 80vw;
+            border-radius: 30px;
 
-            &__cover-container{
+            &__part--one,
+            &__part--two {
+                width: 35vw;
+            }
 
-                &__play{
-                    width: 50px;
-                    height: 50px;
-                }
+            &__part--one {
+                gap: 50px;
+            }
+
+            &__txt {
+                width: 25vw;
+            }
+
+            &__btn {
+                width: 11vw;
+            }
+
+            &__cover {
+                width: 35vw;
+                height: 50vh;
+                object-fit: cover;
             }
         }
     }
-
-    // .btn-container{
-    //     padding-top: 100px;
-    //     margin-top: 100px;
-    // }
 </style>
-
-<script is:inline>
-    const coverContainer = document.querySelector('.video-container__cover-container')
-    const play = document.querySelector('.video-container__cover-container__play');
-    const video = document.querySelector('.video-container__video');
-    play.addEventListener('click', () =>{
-        coverContainer.style.display = 'none';
-        video.style.display = 'block';
-        video.play();
-    })
-</script>

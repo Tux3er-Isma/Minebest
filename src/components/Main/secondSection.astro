@@ -1,52 +1,71 @@
 ---
-import Img1 from "../../assets/section2_img1.jpg";
+import Img1 from "../../assets/contrato.jpg";
 import InfoCard from "./infoCard.astro";
 ---
 
 <article class="article">
     <div class="article__title-container">
-        <h1 class="article__title-container__title">Somos los <span class="article__title-container__title__gradient-txt">mejores</span></h1>
-        <p class="article__title-container__subtitle">¿Por qué? Nos diferenciamos de los demás</p>
+        <h1 class="article__title-container__title">Somos profesionales</h1>
+        <p class="article__title-container__subtitle">
+            Nos diferenciamos de los demás
+        </p>
     </div>
-        <div class="article__content-c">
-            <div class="article__card-container">
-                <InfoCard icon="fa-gear" bTxt="Maquinaria y mineria de última generación." txt="Lideramos la industria al utilizar tecnologías energéticamentes eficientes garantizando una mineria de Bitcoin respetuosa con el medio ambiente"></InfoCard>
-                <InfoCard icon="fa-shield" bTxt="Seguridad de Vanguardia." txt="Implementamos medidas de seguridad de última generación para proteger activos y la red blockchain"></InfoCard>
-                <InfoCard icon="fa-eye" bTxt="Tecnología de eficiencia energética" txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"></InfoCard>
-            </div>
-            <div class="article__img-container">
-                <img src={Img1.src} alt="MineBest" class="article__img">
-            </div>
+    <div class="article__content-c">
+        <div class="article__card-container">
+            <InfoCard
+                icon="fa-gear"
+                bTxt="Maquinaria y mineria de última generación."
+                txt="Lideramos la industria al utilizar tecnologías energéticamentes eficientes garantizando una mineria de Bitcoin respetuosa con el medio ambiente"
+            />
+            <InfoCard
+                icon="fa-shield"
+                bTxt="Seguridad de Vanguardia."
+                txt="Implementamos medidas de seguridad de última generación para proteger activos y la red blockchain"
+            />
+            <InfoCard
+                icon="fa-eye"
+                bTxt="Tecnología de eficiencia energética"
+                txt="Lideramos la industria al utilizar tecnologías de ultima generación y energéticamentes eficientes"
+            />
         </div>
+        <div class="article__img-container">
+            <img src={Img1.src} alt="MineBest" class="article__img" />
+        </div>
+    </div>
 </article>
 
 <style lang="scss">
-    .article{
-        margin-left: 60px;
-        width: 100vw;
+    .article {
+        position: relative;
+        z-index: 2;
+        width: 85vw;
 
-        &__title-container{
-
-            &__title{
+        &__title-container {
+            &__title {
                 color: #fff;
-                width: 90vw;
-                font-size: clamp(35px,3.5vw + 1vh,80px);
+                font-size: clamp(35px, 3.5vw + 1vh, 80px);
 
-                &__gradient-txt{
-                    background: rgb(251,211,252);
-                    background: linear-gradient(87deg, rgba(251,211,252,1) 0%, rgba(189,44,241,1) 100%);
+                &__gradient-txt {
+                    background: rgb(251, 211, 252);
+                    background: linear-gradient(
+                        87deg,
+                        rgba(251, 211, 252, 1) 0%,
+                        rgba(189, 44, 241, 1) 100%
+                    );
                     -webkit-text-fill-color: transparent;
                     -webkit-background-clip: text;
                 }
             }
 
-            &__subtitle{
+            &__subtitle {
                 margin-top: 2.5vh;
-                color: #afafaf;
+                color: #507cd1;
+                font-family: "Outfit Variable", sans-serif;
+                font-weight: 400;
             }
         }
 
-        &__content-c{
+        &__content-c {
             margin-top: 5vh;
             width: 90vw;
             height: fit-content;
@@ -55,66 +74,77 @@ import InfoCard from "./infoCard.astro";
             flex-wrap: wrap;
         }
 
-        &__img{
+        &__img {
             position: relative;
-            right: -17vh;
             width: 47vw;
             height: 400px;
             object-fit: cover;
             border-radius: 20px;
+            object-fit: contain;
         }
     }
 
-    @media only screen and (max-width: 480px){
-        .article{
+    @media only screen and (max-width: 900px) {
+        .article {
+            width: 100vw;
+            overflow: hidden;
             margin: 0;
 
-            &__title-container{
+            &__title-container {
                 margin-left: 20px;
             }
 
-            &__content-c{
+            &__content-c {
                 width: 100vw;
+                display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
 
-            &__card-container{
+            &__card-container {
                 width: 100vw;
                 height: fit-content;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
+                gap: 20px;
             }
 
-            &__img-container{
+            &__img-container {
                 width: 100vw;
-                overflow: hidden;
+                display: flex;
+                justify-content: center;
             }
 
-            &__img{
-                margin-top: 30px;
-                width: 130vw;
-                right: -20px;
+            &__img {
+                position: static;
+                width: 95vw;
+                height: 400px;
+                border-radius: 0px;
+                object-fit: contain;
             }
         }
     }
-</style>
 
-<script is:inline>
-    const infoCardArr = document.querySelectorAll('.info-card');
-    const imgSources = ["https://cdn.discordapp.com/attachments/973568724722389052/1255241150143660142/pexels-craigmdennis-57007.jpg?ex=667c69eb&is=667b186b&hm=abd27ed18930a03bf014ac4576c0696370b8a8fcb194085b40ba09b70037a05a&", 
-                        "https://cdn.discordapp.com/attachments/973568724722389052/1255241152068583544/pexels-pixabay-270404.jpg?ex=667c69eb&is=667b186b&hm=d7e4b840b204311c1e368b6fb08456842ed7f6d39b4846a3f22ec0cece74f5e8&",
-                        "https://cdn.discordapp.com/attachments/973568724722389052/1255241153402376252/pexels-alesiakozik-6770611.jpg?ex=667c69ec&is=667b186c&hm=af0d686e733091851fb2ecf91902b1e50d670cd807720537761b7a4a94a4444d&"];
-    const changeImage = document.querySelector('.article__img');
-    for (let i = 0; i < infoCardArr.length; i++){
-        infoCardArr[i].addEventListener('mouseover', () =>{
-            changeImage.src = imgSources[i];
-            infoCardArr[i].style.backgroundColor = "rgba(255, 255, 255, 0.11)";
-        })
-        infoCardArr[i].addEventListener('mouseleave', () =>{
-            changeImage.src = imgSources[i];
-            infoCardArr[i].style.backgroundColor = "transparent";
-        })
-    }
-    console.log(infoCardArr);
-</script>
+    // @media only screen and (min-width: 481px) and (max-width: 900px) {
+    //     .article {
+    //         &__content-c {
+    //             flex-direction: column;
+
+    //             &__card-container {
+    //                 width: 100vw;
+    //             }
+    //         }
+
+    //         &__img-container {
+    //             margin-top: 30px;
+    //         }
+
+    //         &__img {
+    //             right: 0px;
+    //             width: 90vw;
+    //         }
+    //     }
+    // }
+</style>

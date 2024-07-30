@@ -13,6 +13,8 @@ import Pyramid from "./Pyramid.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
+        z-index: 2;
 
         &__title{
             color: #fff;
@@ -21,8 +23,9 @@ import Pyramid from "./Pyramid.astro";
             text-align: center;
 
             &__gradient-txt{
-                background: rgb(251,211,252);
-                    background: linear-gradient(87deg, rgba(251,211,252,1) 0%, rgba(189,44,241,1) 100%);
+                font-size: clamp(35px,3.5vw + 1vh,80px);
+                background: #fff;
+                    background: linear-gradient(87deg, #fff 0%, #FF5C00 100%);
                     -webkit-text-fill-color: transparent;
                     -webkit-background-clip: text;
             }

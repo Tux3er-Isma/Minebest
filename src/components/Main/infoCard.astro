@@ -5,55 +5,88 @@ const { icon, bTxt, txt } = Astro.props;
 <div class="info-card">
     <i class:list={["fa-solid", "info-card__icon", icon]}></i>
     <div class="info-card__txt-c">
-        <b class="info-card__txt-c__b">{bTxt}</b> {txt}
+        <b class="info-card__txt-c__b">{bTxt}</b>
+        {txt}
     </div>
 </div>
 
 <style lang="scss">
-    .info-card{
+    .info-card {
         margin-top: 2.5vh;
         padding: 20px;
         background: transparent;
-        width: 43vw;
+        width: 42vw;
         display: flex;
         justify-content: space-around;
         border-radius: 10px;
-        transition: all .2s;
+        transition: all 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             background: rgba(255, 255, 255, 0.11);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5.2px);
             -webkit-backdrop-filter: blur(5.2px);
+            scale: 1.1;
         }
 
-        &__icon{
+        &__icon {
             font-size: 35px;
-            color: #956AFF
+            color: #507cd1;
         }
 
-        &__txt-c{
+        &__txt-c {
             width: 35vw;
-            color: #afafaf;
+            color: rgb(179 212 255);
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
 
-            &__b{
+            &__b {
+                font-weight: 700;
                 color: #fff;
             }
         }
     }
 
-    @media only screen and (max-width: 480px){
-        .info-card{
+    @media only screen and (max-width: 480px) {
+        .info-card {
             padding: 5px;
             width: 90vw;
             justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
 
-            &__icon{
+            &:hover {
+                background: transparent;
+                box-shadow: none;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                scale: 1;
+            }
+
+            &__icon {
+                font-size: 50px;
+                margin-bottom: 20px;
+            }
+
+            &__txt-c {
+                text-align: center;
+                width: 35vh;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 900px) {
+        .info-card {
+            padding: 5px;
+            width: 80vw;
+            justify-content: space-evenly;
+
+            &__icon {
                 font-size: 25px;
             }
 
-            &__txt-c{
-                width: 35vh;
+            &__txt-c {
+                width: 70vw;
             }
         }
     }

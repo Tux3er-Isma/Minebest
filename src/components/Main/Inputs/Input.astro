@@ -1,69 +1,92 @@
 ---
-const { label, placeholder, type, size="sm", required=true, asterisk="*", tag }  = Astro.props; 
+const {
+    label,
+    placeholder,
+    type,
+    size = "sm",
+    required = true,
+    asterisk = "*",
+    tag,
+} = Astro.props;
 ---
 
 <div class="inpt-container">
-    <label for="inpt-container__inpt" class="inpt-container__label">{label}  <span class="inpt-container__label__a">{asterisk}</span></label>
-    <input type={type} placeholder={placeholder} class="inpt-container__inpt"  data-size={size} required={required} tabindex="0">
+    <label for="inpt-container__inpt" class="inpt-container__label"
+        >{label} <span class="inpt-container__label__a">{asterisk}</span></label
+    >
+    <input
+        type={type}
+        placeholder={placeholder}
+        class="inpt-container__inpt"
+        data-size={size}
+        required={required}
+        tabindex="0"
+    />
 </div>
 
 <style lang="scss">
-    [data-size="lg"]{
+    [data-size="lg"] {
         height: 30vh;
     }
 
-//     .inpt-container__inpt:required {
-//     border: 1px solid #ae7bff; // Asegúrate de que el borde sea el mismo que cuando está enfocado
-// }
+    //     .inpt-container__inpt:required {
+    //     border: 1px solid #ae7bff; // Asegúrate de que el borde sea el mismo que cuando está enfocado
+    // }
 
-// .inpt-container__inpt:invalid {
-//     border: 1px solid red; // Puedes cambiar el color a tu preferencia
-// }
+    // .inpt-container__inpt:invalid {
+    //     border: 1px solid red; // Puedes cambiar el color a tu preferencia
+    // }
 
-// .inpt-container__label__a:required {
-//     color: red; // Color del asterisco cuando es obligatorio
-// }
+    // .inpt-container__label__a:required {
+    //     color: red; // Color del asterisco cuando es obligatorio
+    // }
 
-    .inpt-container{
+    .inpt-container {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
 
-        &__label{
+        &__label {
             margin-bottom: 20px;
             color: #fff;
 
-            &__a{
-                color: #ae7bff;
+            &__a {
+                color: #ff5c00;
             }
         }
 
-        &__inpt{
+        &__inpt {
             width: 600px;
             border-radius: 10px;
             padding: 13px;
-            border: 1px solid #ae7bff;
+            border: 1px solid #525252;
             outline: none;
-            background: transparent;
+            /* From https://css.glass */
+            background: rgba(190, 190, 190, 0.12);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(190, 190, 190, 0.33);
             color: #fff;
-            transition: all .5s;
+            transition: all 0.5s;
+            cursor: none;
 
-            &:focus{
-                box-shadow: 1px 1px 30px  #882fe0;
+            &:focus {
+                box-shadow: 1px 1px 10px #c78b68;
             }
 
-            &::placeholder{
+            &::placeholder {
                 font-weight: 600;
-                opacity: .5;
-                color: #3d3640;
+                opacity: 0.6;
+                color: #ffffff;
             }
         }
     }
 
-    @media only screen and (max-width: 480px){
-        .inpt-container{
-
-            &__inpt{
+    @media only screen and (max-width: 480px) {
+        .inpt-container {
+            &__inpt {
                 width: 85vw;
             }
         }
