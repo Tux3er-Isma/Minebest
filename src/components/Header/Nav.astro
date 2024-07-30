@@ -1,130 +1,89 @@
 ---
 import GradientBtn from "../gradientBtn.astro";
+import "@fontsource/poppins/100.css";
+import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
 ---
 
 <nav class="header__nav">
-    <a href="#header"><button class="header__nav__btn">MineBest</button></a>
-    <div class="header__nav__interact-container">
-        <!-- <button class="header__nav__interact-container__btn">
-            <img src="https://cdn.discordapp.com/attachments/973568724722389052/1181665023966331010/image.png?ex=6581e24f&is=656f6d4f&hm=180e9e066c0358d92f28cc0da27af54f74f9ff471f4a93ff9163612293d3190a&" alt="falg" class="header__nav__interact-container__btn__flag">
-            <p class="header__nav__interact-container__btn__txt">ES</p>
-        </button> -->
-        <div class="header__nav__interact-container__gradient-btn-container">
-            <GradientBtn></GradientBtn>
-        </div>
-    </div>
+    <a href="#s5" class="header__nav__link">Únete a nosotros</a>
+    <a href="" class="header__nav__link header__nav__link--2">Saber más</a>
 </nav>
 
 <style lang="scss">
-    a{
+    a {
         height: fit-content;
     }
 
-    .header{
-
-        &__nav{
+    .header {
+        &__nav {
             top: 0px;
             position: fixed;
-            z-index: 10;
+            z-index: 9;
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
-            background: rgba(28, 28, 28, 0.39);
+            justify-content: flex-end;
+            gap: 50px;
+            background: rgba(0, 0, 0, 0.83);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(11px);
-            -webkit-backdrop-filter: blur(11px);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border: 1px solid rgba(0, 0, 0, 0.3);
             position: fixed;
-	        top: 0;
-	        left: 0;
-	        width: 100%;
-	        transition: all 100ms ease-in-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: all 100ms ease-in-out;
             align-items: center;
 
-            &__btn{
-                background-color: transparent;
-                border: none;
-                outline: none;
-                color: #fff;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 16px;
-                fon-weight: bold;
+            &__link {
+                font-family: "Poppins", sans-serif;
+                text-decoration: none;
+                color: #696969;
+                transition: all 0.5s;
+                cursor: none;
 
-
-                &:hover{
-                    cursor: pointer;
+                &:hover {
+                    color: #ffd056;
                 }
-            }
 
-            &__interact-container{
-                display: flex;
-                width: fit-content;
-                justify-content: space-between;
-
-                &__btn{
-                    width: 80px;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    border-radius: 30px;
-                    outline: none;
-                    border: none;
-                    padding: 5px;
-                    background-color: #32343fa8;
-
-                    &:hover{
-                        cursor: pointer;
-                    }
-
-                    &__flag{
-                        width: 30px;
-                    }
-
-                    &__txt{
-                        font-family: 'Montserrat';
-                        color: #fff;
-                    }
+                &--2 {
+                    margin-right: 30px;
                 }
             }
         }
-
     }
 
-
-    @media only screen and (min-width: 1600px){
-        .header{
-
-            &__nav{
-
-                &__btn{
+    @media only screen and (min-width: 1600px) {
+        .header {
+            &__nav {
+                &__btn {
                     margin-left: 50px;
                 }
 
-                &__interact-container{
+                &__interact-container {
                     margin-right: 50px;
                 }
             }
         }
     }
 
-    @media only screen and (max-width: 900px){
-        .header{
-
-            &__nav{
-
-                &__interact-container{
-                    width: fit-content;
-
-                    &__gradient-btn-container{
-                        display: none;
-                    }
-                }
+    @media only screen and (max-width: 900px) {
+        .header {
+            &__nav {
+                display: none;
             }
         }
     }
 </style>
 
-<script is:inline>
+<!-- <script is:inline>
  document.addEventListener("DOMContentLoaded", function () {
   var prevScrollpos = window.pageYOffset;
   var navbar = document.querySelector(".header__nav");
@@ -143,4 +102,4 @@ import GradientBtn from "../gradientBtn.astro";
 });
 
 
-</script>
+</script> -->

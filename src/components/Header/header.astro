@@ -7,28 +7,34 @@ import StaticsContainer from "./staticsContainer.astro";
 ---
 
 <header class="header" id="header">
-    <img src="/desktop.png" alt="Sonwy Mountains" class="header__img">
+    <div class="header__opac-container">
+        <img src="/bg-img.png" alt="Sonwy Mountains" class="header__img" />
+        <img src="/btc-coin.png" alt="Btc Coin" class="header__btc-coin" />
+    </div>
     <div class="f">
-    <Nav></Nav>
+        <Nav />
     </div>
     <div class="h-2">
         <div class="header__info-container">
-            <h1 class="header__info-container__title">Minar Bitcoin: <br> la mejor opción</h1>
-            <div class="header__info-container__btn-container">
-                <GradientBtnWB></GradientBtnWB>
-                <InfoBtn text="Saber más"></InfoBtn>
+            <div class="header__info-container__top">
+                <h1 class="header__info-container__title">
+                    <span class="header__info-container__title--big"
+                        >MINAR BITCOIN</span
+                    >
+                    <br /> TU fortuna, TU futuro
+                </h1>
+                <div class="header__info-container__btn-container">
+                    <a
+                        href="#s5"
+                        class="header__info-container__btn-container__btn"
+                        >Únete a nosotros</a
+                    >
+                </div>
             </div>
-        </div>
-        <div class="header__statics-container">
-            <StaticsContainer num="" other="€" txt="Deposito Mínimo" id="card-1" size="sm">
-                <slot slot="after">€</slot>
-            </StaticsContainer>
-            <StaticsContainer num="" other="k" txt="Inversores Crypto" id="card-2", size="lg">
-                <span slot="before">+</span>
-            </StaticsContainer>
-            <StaticsContainer num="" txt="Pagos instantaneos" id="card-3" size="sm">
-                <span slot="after">/7</span>    
-            </StaticsContainer> 
+            <div class="header__statics-container">
+                <StaticsContainer num="" txt="" id="card-3" />
+            </div>
+            <p class="header__info-container__txt">Inversores Crypto</p>
         </div>
     </div>
 </header>
@@ -38,104 +44,237 @@ import StaticsContainer from "./staticsContainer.astro";
 </style> -->
 
 <style lang="scss">
-    .f{
+    .f {
         width: 100vw;
         height: 17.5vh;
     }
 
-    .h-2{
+    .h-2 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .header{
+    .header {
         padding-bottom: 50px;
         width: 100vw;
         display: flex;
-        background-color: #1d1d1d;
+        background-color: #0e1329;
         flex-direction: column;
+        align-items: center;
+        height: 100vh;
 
-        &__img{
+        &__opac-container {
             width: 100vw;
             height: 90vh;
-            object-fit: cover;
-            object-position: top;
+            position: absolute;
+            z-index: 2;
+            top: 0px;
+            background-color: #131313;
+            opacity: 0.3;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__img {
+            height: 90vh;
+            width: 100vw;
             position: absolute;
             z-index: 1;
             top: 0px;
         }
 
-        &__info-container{
+        &__btc-coin {
+            z-index: 1;
+            position: absolute;
+            width: 70vw;
+            bottom: 0px;
+            opacity: 1;
+            // clip-path: inset(0 0 50% 0); /* Cortar la mitad inferior */
+        }
+
+        &__info-container {
             position: relative;
             z-index: 2;
-            margin-bottom: 15vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            width: fit-content;
-            margin-left: 100px;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
 
-            &__title{
-                font-size: 10vh;
-                color: #fff;
-                font-family: 'Montserrat', sans-serif;
+            &__top {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+                text-align: center;
             }
 
-            &__btn-container{
-                margin-top: 10vh;
+            &__title {
+                text-align: center;
+                font-size: clamp(10px, 3vw + 1rem, 61px);
+                color: #fff;
+                font-weight: 300;
+                text-shadow: 0px 11px 3px #00000040;
+
+                &--big {
+                    color: #ffca0e;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 900;
+                    font-size: clamp(60px, 5vw + 1rem, 133px);
+                    text-shadow: 0px 11px 3px #00000040;
+                }
+            }
+
+            &__btn-container {
+                margin-top: 7vh;
                 width: 33vw;
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 50px;
+
+                &__btn {
+                    outline: none;
+                    border: none;
+                    width: 333px;
+                    height: 81px;
+                    border-radius: 39px;
+                    font-family: "Poppins";
+                    font-size: 23px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 600;
+                    background: linear-gradient(
+                        180deg,
+                        #f1bc00 0%,
+                        #ffffc5 100%
+                    );
+                    color: #44220c;
+
+                    box-shadow:
+                        0px 0px 39.97px 0px #ffffc5,
+                        0px 0px 79.95px 0px #ffffc5,
+                        0px 0px 279.82px 0px #ffffc5,
+                        0px 0px 559.64px 0px #ffa724,
+                        0px 0px 959.38px 0px #ffa724,
+                        0px 0px 1678.91px 0px #ffa724;
+
+                    transition: all 0.5s;
+
+                    &:hover {
+                        cursor: none;
+                        background-color: #fff;
+                        color: #000;
+                        box-shadow:
+                            0px 0px 998.42px 1px #fff,
+                            0px 0px 570.53px 1px #fff,
+                            0px 0px 332.81px 1px #fff,
+                            0px 0px 166.4px 1px #fff,
+                            0px 0px 47.54px 1px #fff,
+                            0px 0px 23.77px 1px #fff;
+                        transform: scale(1.1);
+                    }
+
+                    &__link{
+                        color: #44220c;
+
+
+                    }
+                }
+            }
+
+            &__txt {
+                font-family: "Outfit", sans-serif;
+                color: #ffffff;
+                position: relative;
+                top: 50px;
+                font-size: 20px;
             }
         }
 
-        &__statics-container{
-            position: relative;
+        &__statics-container {
+            position: absolute;
             z-index: 2;
-           display: flex;
-           justify-content: space-around;
-           align-items: center;
-           padding: 20px;
-           align-self: center;
-           background-color: #161616; 
-           width: 85vw;
-           flex-wrap: wrap;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            align-self: center;
+            width: 85vw;
+            bottom: 0px;
         }
     }
 
-    @media only screen and (max-width: 900px){
-        .header{
+    @media only screen and (max-width: 900px) {
+        .header {
+            &__btc-coin {
+                display: none;
+            }
 
-            &__info-container{
+            &__info-container {
                 margin: 0;
                 width: 100vw;
                 justify-content: center;
                 align-items: center;
 
-                &__title{
+                &__title {
                     font-size: 5vh;
                     text-align: center;
                 }
 
-                &__btn-container{
+                &__btn-container {
                     height: 25vh;
                     width: 70vw;
                     margin-bottom: 70px;
 
                     justify-content: center;
+
+                    &__btn {
+                        width: 250px;
+                        font-size: 20px;
+                        background: linear-gradient(
+                            180deg,
+                            #f1bc00 0%,
+                            #ffffc5 100%
+                        );
+                        color: #44220c;
+
+                        -webkit-box-shadow: 0px 0px 63px 16px
+                            rgba(212, 187, 41, 0.46);
+                        -moz-box-shadow: 0px 0px 63px 16px
+                            rgba(212, 187, 41, 0.46);
+                        box-shadow: 0px 0px 63px 16px rgba(212, 187, 41, 0.46);
+
+                        transition: all 0.5s;
+
+                        &:hover {
+                            cursor: none;
+                            background-color: #fff;
+                            color: #000;
+                            -webkit-box-shadow: 0px 0px 63px 16px #fff;
+                            -moz-box-shadow: 0px 0px 63px 16px #fff;
+                            box-shadow: 0px 0px 63px 16px #fff;
+                            transform: scale(1.1);
+                        }
+                    }
                 }
             }
 
-            &__statics-container{
+            &__statics-container {
                 border-radius: 20px;
                 padding-bottom: 40px;
             }
         }
     }
 </style>
-
 
 <!-- <script is:inline>
     const strNum0 = document.querySelectorAll(".container__num-container")[0];
@@ -185,9 +324,9 @@ import StaticsContainer from "./staticsContainer.astro";
 </script>  -->
 
 <script is:inline>
-    const routes = ["/desktop.png", "/mobile.png"];
-    const img = document.querySelector('.header__img');
-    if (window.screen.availWidth <= 480){
+    const routes = ["/desktop.jpg", "/mobile.png"];
+    const img = document.querySelector(".header__img");
+    if (window.screen.availWidth <= 480) {
         img.src = routes[1];
     } else {
         img.src = routes[0];
