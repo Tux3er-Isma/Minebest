@@ -1,50 +1,90 @@
-import type { APIRoute } from "astro";
-import { Resend } from "resend";
-import * as apiKeys from './apikeys.json';
+// /pages/api/sendmail.json.ts
+import type { APIRoute } from 'astro';
+import nodemailer from 'nodemailer';
 
-let part1 = "re_";
-let part2 = "AoekZ6X8_";
-let part3 = "JghmerihvW3XbE8H4YJPhDpx";
+// const emailTo = "clientes@oropatrimonio.com"
+// const emailToPass = "oro2023patrimonio"
+// const host = "mail.privateemail.com"
+
+// const emailTo = "isma.tux3er@gmail.com";
+// const emailToPass = "krao sotd tpnk cyjq";
+// const host = "smtp.gmail.com"
+
+const emailTo = "resend";
+const emailToPass = "re_RDoiobv4_LGBRaetcjbk3p2Fo4w3XERbY";
+const host = "smtp.resend.com";
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const body = await request.json();
-  const { to, from, html, subject, text, api } = body;
-  const resend = new Resend(api);
+  // console.log('request', request)
 
-  if (!to || !from || !html || !subject || !text) {
-    return new Response(null, {
-      status: 404,
-      statusText: "Did not provide the right data",
-    });
-  }
+  if (request.headers.get('Content-Type') === 'application/json') {
+    const body = await request.json();
+    const { to, from, html, subject, text, api, clientTo, clientHtml } = body;
+    // const formData = await request.json()
+    // const name = formData.name
+    // const surname = formData.surname
+    // const email = formData.email
+    // const tel = formData.tel
+    // const subject = formData.subject
+    // const message = `${formData.message}
+    // ----------------------------------------------------------------------
+    // From: ${name} ${surname} • email: ${email} • tel: ${tel}
+    // `
+    // const html = `<div style="margin: 20px auto;font-family: Helvetica, Verdana, sans-serif">${message.replace(
+    //   /[\r\n]/g,
+    //   '<br>'
+    // )}</div>`
 
-  const send = await resend.emails.send({
-    from,
-    to,
-    subject,
-    html,
-    text,
-  });
-
-  if (send.data) {
-    return new Response(
-      JSON.stringify({
-        message: send.data,
-      }),
-      {
-        status: 200,
-        statusText: "OK",
+    // sendmail
+    let mailTransporter = nodemailer.createTransport({
+      host,
+      port: 587,
+      secure: false,
+      auth: {
+        user: emailTo,
+        pass: emailToPass,
+      },
+      tls: {
+        rejectUnauthorized: false
       }
-    );
-  } else {
-    return new Response(
-      JSON.stringify({
-        message: send.error,
-      }),
-      {
-        status: 500,
-        statusText: "Internal Server Error",
+    })
+
+    mailTransporter.verify((error, success) =>{
+      if (error){
+        console.log(error)
+      } else {
+        console.log("All is ready")
       }
-    );
+    })
+
+    // {
+    //   from: emailTo,
+    //   to: email,
+    //   subject: `${new URL(request.url).hostname}: ${subject}`,
+    //   text: message,
+    //   html,
+    // },
+
+    let mailDetails = ({
+      from,
+      to,
+      subject,
+      text,
+      html,
+    })
+
+
+    let mailresult
+    try {
+      mailresult = await mailTransporter.sendMail(mailDetails)
+    } catch (error) {
+      console.log('******* Error: ', error)
+    }
+    console.log('Message sent: %s', mailresult?.messageId)
+    // return endpoint response
+    return new Response(JSON.stringify(mailDetails), {
+      status: 200,
+    })
   }
-};
+  return new Response(null, { status: 400 }) // if not a json request
+}
