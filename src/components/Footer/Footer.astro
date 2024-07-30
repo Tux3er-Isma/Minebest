@@ -1,13 +1,11 @@
 <footer class="footer">
     <ul class="footer__list-container">
         <li class="footer__list-container__items"><a href="#header" class="footer__list-container__items__links">Inicio</a></li>
-        <li class="footer__list-container__items"><a href="#s1" class="footer__list-container__items__links">Video presentación</a></li>
-        <li class="footer__list-container__items"><a href="#s2" class="footer__list-container__items__links">Descubre por qué minar Bitcoin</a></li>
-        <li class="footer__list-container__items"><a href="#s3" class="footer__list-container__items__links">Nosotros somos los mejores</a></li>
-        <li class="footer__list-container__items"><a href="#s4" class="footer__list-container__items__links">Sobre nosotros</a></li>
+        <li class="footer__list-container__items"><a href="#s1" class="footer__list-container__items__links">Por qué minar bitcoin</a></li>
+        <li class="footer__list-container__items"><a href="#s2" class="footer__list-container__items__links">Sobre nosotros</a></li>
+        <li class="footer__list-container__items"><a href="#s3" class="footer__list-container__items__links">¿Quieres empezar a ganar minando?</a></li>
+        <li class="footer__list-container__items"><a href="/privacy" class="footer__list-container__items__links">Política de privacidad</a></li>
     </ul>
-    <button type="button" class="footer__btn">MineBest</button>
-    <a href="/privacy" class="footer__pp" transition:name="pp">Política y Privacidad</a>
 </footer>
 
 <style lang="scss">
@@ -16,10 +14,10 @@
         flex-direction: column;
         align-items: center;
         position: absolute;
-        background-color: #1a1a1a;
+        background-color: #000;
         padding: 40px;
-        height: 250px;
         width: 100vw;
+        z-index: 2;
         
         &__list-container{
             width: 80vw;
@@ -28,7 +26,7 @@
             justify-content: space-around;
 
             &__items{
-
+                text-align: center;
                 font-weight: 500;
 
                 &__links{
@@ -45,34 +43,6 @@
                         text-decoration: underline;
                     }
                 }
-            }
-        }
-
-        &__btn{
-            font-size: 17px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            padding: 10px;
-            width: 150px;
-            outline: none;
-            border: none;
-            background-color: #fff;
-            color: #000;
-            font-weight: 600;
-            transition: all .5s;
-            border: 2px solid #fff;
-
-            &:hover{
-                background-color: #161616;
-                color: #fff;
-            }
-        }
-
-        &__pp{
-            color: #fff;
-
-            &:visited{
-                color: #fff;
             }
         }
     }
