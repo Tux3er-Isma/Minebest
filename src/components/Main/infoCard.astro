@@ -1,9 +1,9 @@
 ---
-const { icon, bTxt, txt } = Astro.props;
+const { icon, bTxt, txt, iconColor } = Astro.props;
 ---
 
 <div class="info-card">
-    <i class:list={["fa-solid", "info-card__icon", icon]}></i>
+    <i class:list={["fa-solid", "info-card__icon", icon]} style=`color: ${iconColor}`></i>
     <div class="info-card__txt-c">
         <b class="info-card__txt-c__b">{bTxt}</b>
         {txt}
@@ -31,7 +31,6 @@ const { icon, bTxt, txt } = Astro.props;
 
         &__icon {
             font-size: 35px;
-            color: #507cd1;
         }
 
         &__txt-c {
