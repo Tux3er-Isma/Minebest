@@ -11,19 +11,40 @@ import CleanBtn from "./cleanBtn.astro";
         <div class="article__card__content-container">
             <div>
                 <h1 class="article__card__title">
-                    Sobre <br /><span class="article__card__title--green">Nosotros</span>
+                    Sobre <br /><span class="article__card__title--green"
+                        >Nosotros</span
+                    >
                 </h1>
-                <br>
+                <br />
                 <p class="article__card__txt article__card__txt--white">
-                    Desde nuestros modestos inicios hasta nuestro estatus actual, hemos cultivado una reputación de innovación.
+                    Somos un equipo que estamos en el mundo cripto desde el año
+                    2017, apasionados por su tecnología y sus fundamentales.
+                    Lógicamente, hemos visto subir y corregir el precio del
+                    bitcoin a lo largo de nuestra experiencia y hemos estudiado
+                    su histórico. A lo largo del tiempo, hemos aprendido que el
+                    bitcoin tiene un patrón de comportamiento muy predecible, en
+                    períodos de 4 años debido a sus halvings. En estos años de
+                    experiencia, hemos probado un poco de todo, principalmente:
                 </p>
-                <br>
-                <br>
-                <p class="article__card__txt">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                <br />
+                <br />
+                <button type="button" class="article__card__btn">Leer más</button>
+                <p class="article__card__txt article__card__hidden-txt">
+                    Trading Minería Holding Conocer nuevos proyectos
+                    interesantes con buenos fundamentos. Hemos podido aprender,
+                    a veces con prueba y error, como se dice. También con muchas
+                    horas de zooms, siguiendo canales especializados y con
+                    grandes maestros, que llevan más tiempo que nosotros en este
+                    apasionante nuevo mundo financiero. Por eso nos gusta poder
+                    compartir nuestro conocimiento y experiencia. Ponte en
+                    contacto con nosotros y cuéntanos tu experiencia. También si
+                    eres nuevo y te gustaría aprender, para entrar en este
+                    mercado bien acompañado. Reserva una cita, y dentro de tus
+                    opciones, analizamos juntos lo que creemos que puede ser lo
+                    más adecuado. ¡El presente y futuro financiero es bitcoin!
                 </p>
             </div>
-            <br>
+            <br />
             <div class="article__card__btn-container">
                 <CleanBtn />
             </div>
@@ -32,16 +53,15 @@ import CleanBtn from "./cleanBtn.astro";
 </article>
 
 <style lang="scss">
-    .article{
+    .article {
         color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100vw;
 
-        &__card{
-            
-            &__content-container{
+        &__card {
+            &__content-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -49,17 +69,17 @@ import CleanBtn from "./cleanBtn.astro";
                 text-align: center;
             }
 
-            &__title{
+            &__title {
                 margin-bottom: 20px;
                 width: 100%;
-                font-size: clamp(40px,3.5vw + 1vh,80px);
+                font-size: clamp(40px, 3.5vw + 1vh, 80px);
 
                 &--green {
-                    font-size: clamp(40px,3.5vw + 1vh,80px);
-                    background: #00FF47;
+                    font-size: clamp(40px, 3.5vw + 1vh, 80px);
+                    background: #00ff47;
                     background: linear-gradient(
                         90deg,
-                        #00FF47 0%,
+                        #00ff47 0%,
                         #6ebd84 100%
                     );
                     -webkit-text-fill-color: transparent;
@@ -67,46 +87,66 @@ import CleanBtn from "./cleanBtn.astro";
                 }
             }
 
-            &__txt{
+            &__txt {
                 width: 35vw;
-                font-family: 'Poppins', sans-serif;
+                font-family: "Poppins", sans-serif;
                 color: #afafaf;
                 font-weight: 300;
                 font-size: 20px;
 
-                &--white{
+                &--white {
                     color: #fff;
                     font-weight: 600;
                 }
             }
 
-            &__btn-container{
+            &__hidden-txt{
+                display: none;
+            }
+
+            &__btn-container {
                 margin-top: 30px;
+            }
+
+            &__btn{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-weight: bold;
+                color: #9e9e9e;
+                font-size: 18px;
+                text-decoration: underline;
             }
         }
     }
 
-    @media only screen and (max-width: 900px){
-        .article{
-
-            &__card{
-
-                &__txt{
+    @media only screen and (max-width: 900px) {
+        .article {
+            &__card {
+                &__txt {
                     width: 70vw;
                 }
             }
         }
     }
 
-    @media only screen and (min-width: 1600px){
-        .article{
-
-            &__card{
-
-                &__txt{
+    @media only screen and (min-width: 1600px) {
+        .article {
+            &__card {
+                &__txt {
                     width: 30vw;
                 }
             }
         }
     }
 </style>
+
+<script is:inline>
+    const readMoreBtn = document.querySelector('.article__card__btn');
+    const hiddenTxt = document.querySelector('.article__card__hidden-txt');
+
+    readMoreBtn.addEventListener('click', () =>{
+        hiddenTxt.style.display = 'block';
+        readMoreBtn.style.display = 'none';
+    })
+</script>
