@@ -33,8 +33,8 @@ import StaticsContainer from "./staticsContainer.astro";
             </div>
             <div class="header__statics-container">
                 <StaticsContainer num="" txt="" id="card-3" />
+                <p class="header__info-container__txt">Inversores Crypto</p>
             </div>
-            <p class="header__info-container__txt">Inversores Crypto</p>
         </div>
     </div>
 </header>
@@ -195,8 +195,8 @@ import StaticsContainer from "./staticsContainer.astro";
             &__txt {
                 font-family: "Outfit", sans-serif;
                 color: #ffffff;
-                position: relative;
-                top: 50px;
+                position: absolute;
+                bottom: 10px;
                 font-size: 20px;
             }
         }
@@ -270,7 +270,7 @@ import StaticsContainer from "./staticsContainer.astro";
 
             &__statics-container {
                 border-radius: 20px;
-                padding-bottom: 40px;
+                margin: 40px;
             }
         }
     }
