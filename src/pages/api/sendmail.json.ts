@@ -2,14 +2,6 @@
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
-// const emailTo = "clientes@oropatrimonio.com"
-// const emailToPass = "oro2023patrimonio"
-// const host = "mail.privateemail.com"
-
-// const emailTo = "isma.tux3er@gmail.com";
-// const emailToPass = "krao sotd tpnk cyjq";
-// const host = "smtp.gmail.com"
-
 
 export const POST: APIRoute = async ({ params, request }) => {
     // console.log('request', request)
