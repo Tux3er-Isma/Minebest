@@ -40,8 +40,8 @@ import "@fontsource/poppins/800.css";
 		<meta name="keywords" content="Mineria, Criptomonedas, Dinero, Invertir, Inversiones, Minebest, Mineriabtc, BTC">
 		<link rel="canonical" href="https://mineriabtc.com"/>
 		<meta property="og:locale" content="es_ES">
-		<meta property="og:title" content="Minebest">
-		<meta property="og:site_name" content="Minebest">
+		<meta property="og:title" content="Mineria BTC">
+		<meta property="og:site_name" content="Mineria BTC">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 		<meta name="generator" content={Astro.generator} />
 		<script
@@ -3706,7 +3706,7 @@ import "@fontsource/poppins/800.css";
 <script is:inline>
 	const btc = document.querySelector(".btc");
 	document.body.style.overflowY = "hidden";
-	window.addEventListener("load", () => {
+	document.addEventListener('DOMContentLoaded', () => {
 		btc.classList.add("no-btc");
 		document.body.style.overflowY = "scroll";
 	});
