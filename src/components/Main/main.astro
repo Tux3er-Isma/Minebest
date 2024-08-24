@@ -10,14 +10,21 @@ import FourthSection from "./fourthSection.astro";
     <section class="main__section main__section--1" id="s1">
         <Video />
     </section>
-    <div class="modal"><iframe class="modal__video" src="https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="modal__close-container"><i class="fa-solid fa-x modal__close-container__icon"></i></div></div>
+    <div class="modal">
+        <iframe
+            class="modal__video"
+            src="https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe><div class="modal__close-container">
+            <i class="fa-solid fa-x modal__close-container__icon"></i>
+        </div>
+    </div>
     <section class="main__section main__section--2" id="s2">
         <FirstSection />
-        <img
-            src="/btc-coin-b.png"
-            alt="Bitcoin"
-            class="article__img-btc"
-        />
+        <img src="/btc-coin-b.png" alt="Bitcoin" class="article__img-btc" />
     </section>
     <section class="main__section main__section--3" id="s3">
         <SecondSection />
@@ -29,19 +36,11 @@ import FourthSection from "./fourthSection.astro";
     </section>
     <section class="main__section main__section--4" id="s4">
         <ThirdSection />
-        <img
-            src="/btc-coin-b.png"
-            alt="Bitcoin"
-            class="article__img-btc"
-        />
+        <img src="/btc-coin-b.png" alt="Bitcoin" class="article__img-btc" />
     </section>
     <section class="main__section main__section--5" id="s5">
         <FourthSection />
-        <img
-            src="/btc-coin-b.png"
-            alt="Bitcoin"
-            class="article__form-btc"
-        />
+        <img src="/btc-coin-b.png" alt="Bitcoin" class="article__form-btc" />
     </section>
 </main>
 
@@ -163,7 +162,7 @@ import FourthSection from "./fourthSection.astro";
         }
     }
 
-    .modal{
+    .modal {
         display: none;
         position: absolute;
         z-index: 8;
@@ -171,20 +170,24 @@ import FourthSection from "./fourthSection.astro";
         height: 100vh;
         justify-content: center;
         align-items: center;
-		background: rgba(9, 8, 12, 0.53);
-		border-radius: 16px;
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(16.1px);
-		-webkit-backdrop-filter: blur(16.1px);
-		border: 1px solid rgba(9, 8, 12, 0.3);
+        background: rgba(9, 8, 12, 0.53);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(16.1px);
+        -webkit-backdrop-filter: blur(16.1px);
+        border: 1px solid rgba(9, 8, 12, 0.3);
 
-        &__video{
+        &__video {
             width: 75vw;
             height: 70vh;
             object-fit: fill;
+            border-radius: 50px;
+            background-size: 100% 100%;
+            position: relative;
+            overflow: hidden;
         }
 
-        &__close-container{
+        &__close-container {
             font-size: 30px;
             color: #fff;
             position: absolute;
@@ -199,16 +202,20 @@ import FourthSection from "./fourthSection.astro";
             align-items: center;
             background-color: #fff;
             color: #000;
+            transition: all .5s;
 
-            &__icon{
-                
+            &__icon {
+            }
+
+            &:hover{
+                scale: 1.3;
             }
         }
     }
 
     @media only screen and (max-width: 900px) {
         .main {
-            &__section--1{
+            &__section--1 {
                 margin-top: 40px;
                 margin-bottom: 30px;
             }
@@ -221,7 +228,7 @@ import FourthSection from "./fourthSection.astro";
                 // margin-bottom: 100px;
             }
 
-            &__section--4{
+            &__section--4 {
                 padding: 20px;
             }
 
@@ -240,9 +247,8 @@ import FourthSection from "./fourthSection.astro";
             }
         }
 
-        .modal{
-
-            &__video{
+        .modal {
+            &__video {
                 height: 30vh;
             }
         }
@@ -250,22 +256,25 @@ import FourthSection from "./fourthSection.astro";
 </style>
 
 <script is:inline>
-    const modal = document.querySelector('.modal');
-    const video = document.querySelector('.modal__video');
-    const playBtn = document.querySelector('.cover-container__btn');
-    const videoCloseBtn = document.querySelector('.modal__close-container');
+    const modal = document.querySelector(".modal");
+    const video = document.querySelector(".modal__video");
+    const playBtn = document.querySelector(".cover-container__btn");
+    const videoCloseBtn = document.querySelector(".modal__close-container");
 
-    playBtn.addEventListener('click', () =>{
-        document.body.style.overflowY = 'hidden';
-        modal.style.display = 'flex';
+    playBtn.addEventListener("click", () => {
+        document.body.style.overflowY = "hidden";
+        modal.style.display = "flex";
         modal.style.top = `${window.scrollY}px`;
-        video.setAttribute('src', `https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh&autoplay=1`)
-    })
+        video.setAttribute(
+            "src",
+            `https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh&autoplay=1`,
+        );
+    });
 
-    videoCloseBtn.addEventListener('click', () =>{
-        document.body.style.overflowY = 'scroll';
-        modal.style.display = 'none';
+    videoCloseBtn.addEventListener("click", () => {
+        document.body.style.overflowY = "scroll";
+        modal.style.display = "none";
         modal.style.top = `https://www.youtube-nocookie.com/embed/_UjzMwWpHgE?si=22dm9-UnpekNy45z&amp;start=1391px`;
-        video.setAttribute('src', ``)
-    })
+        video.setAttribute("src", ``);
+    });
 </script>
