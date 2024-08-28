@@ -1,6 +1,6 @@
 ---
 //Astro props
-const { title, part1, part2, email, smtp, user, from1, from2 } = Astro.props;
+const { title, part1, part2, email, smtp, user, from1, from2, link } = Astro.props;
 
 //View Transitions
 import { ViewTransitions } from "astro:transitions";
@@ -117,18 +117,18 @@ import "@fontsource/poppins/800.css";
 					<div class="popup__container">
 						<h1 class="popup__title">¡Gracias por tu interés!</h1>
 						<h2 class="popup__subtitle">
-							Pronto recibirás toda la información para empezar a minar Bitcoin con la comañía líder a nivel mundial.
+							Pronto recibirás toda la información para empezar a minar Bitcoin con la compañía líder a nivel mundial.
 						</h2>
 					</div>
 					<h2 class="popup__subtitle">Si prefieres un <p class="popup__txt">trato personalizado,</p>contáctanos por WhatsApp</h2>
-					<button type="button" class="popup__wtsp-btn"
+					<a href={link}><button type="button" class="popup__wtsp-btn"
 						><img
 							src="/whatsapp.png"
 							alt="Mineriabtc"
 							class="popup__wtsp-btn__icon"
 						/>
-						<a class="popup__wtsp-btn__link">¡CONTACTA!</a></button
-					>
+						<p class="popup__wtsp-btn__link">¡CONTACTA!</button
+					></a>
 					<h2 class="popup__txt popup__txt--2">¡Queremos ayudarte a alcanzar el éxito financiero!</h3>
 				</div>
 			</div>
@@ -3756,7 +3756,7 @@ import "@fontsource/poppins/800.css";
 <script is:inline>
 	const odometerArr = document.querySelectorAll(".odometer");
 	setTimeout(() => {
-		odometerArr[0].innerHTML = 17000;
+		odometerArr[0].innerHTML = 25000;
 	}, 1000);
 </script>
 
