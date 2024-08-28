@@ -3812,12 +3812,17 @@ import "@fontsource/poppins/800.css";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
 		*{
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			background-color: #1f455f;
+			font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 		}
 
         body{
@@ -3830,28 +3835,37 @@ import "@fontsource/poppins/800.css";
         }
 
         .title{
+			margin-bottom: 40px;
         }
 
         .title__yellow{
-            color: #FFD600;
+            color: #0019FF;
+			font-weight: 600;
         }
 
         .subtitle{
+			margin-bottom: 20px;
+			font-size: 16px;
         }
 
         .info{
             padding: 10px;
             width: 300px;
-            text-align: center;
-            background-color: #152E44;
-            color: #eee;
+            background-color: #D9D9D9;
+            color: #4B4B4B;
+			border-radius: 12px;
+			font-size: 16px;
+			margin-bottom: 33px;
         }
+
+		.name{
+		}
     </style>
 </head>
 <body>
     <h1 class="title">Tienes un mensaje de <span class="title__yellow">${name.value}</span></h1>
     <h2 class="subtitle">Nombre y Apellidos</h2>
-    <div class="info">${name.value}</div>
+    <div class="info name">${name.value}</div>
     <h2 class="subtitle">Email</h2>
     <div class="info">${email.value}</div>
     <h2 class="subtitle">Mensaje</h2>
