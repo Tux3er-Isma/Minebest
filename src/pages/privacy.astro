@@ -4,8 +4,6 @@ import Open from "../components/PrivacyPolicy/open.astro";
 ---
 
 <Layout title="Política de Privacidad">
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
     <h1 class="title" id="header">Política de privacidad</h1>
     <h3 class="subtitle">Fecha de última actualización: agosto 2024</h3>
     <p class="txt">Esta Política de Privacidad explica cómo en mineriabtc.com recogemos, utilizamos, almacenamos, compartimos y protegemos los datos personales que proporcionas a través de nuestro sitio web. Tus datos serán tratados conforme al RGPD y la LOPDGDD, garantizando un manejo eficaz y responsable. Como usuario, eres responsable de la autenticidad y veracidad de los datos que compartes.  </p>
@@ -72,14 +70,14 @@ import Open from "../components/PrivacyPolicy/open.astro";
         justify-content: center;
         align-items: center;
         overflow-x: hidden;
-        cursor: none;
+        cursor: url("../assets/cursor.png"), auto;
     } 
 
     a{
-        cursor: none;
+        cursor: url("../assets/pointer.png"), auto;
 
         &:hover{
-            cursor: none;
+            cursor: url("../assets/pointer.png"), auto;
         }
     }
 
@@ -130,7 +128,7 @@ import Open from "../components/PrivacyPolicy/open.astro";
 
             &:hover{
                 text-decoration: underline;
-                cursor: pointer;
+                cursor: url("../assets/pointer.png"), auto;
             }
         }
 
