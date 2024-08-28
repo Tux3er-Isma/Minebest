@@ -94,7 +94,7 @@ if (Astro.request.headers.get("referer")) {
 							class="slider__item-container slider__item--8"
 						/>
 					</li>
-					<li class="slide">
+					<!-- <li class="slide">
 						<Image
 							src={img9}
 							alt="Historia como refugio seguro"
@@ -107,7 +107,7 @@ if (Astro.request.headers.get("referer")) {
 							alt="Protección contra riesgos sistémicos"
 							class="slider__item-container slider__item--10"
 						/>
-					</li>
+					</li> -->
 					<li class="slide">
 						<Image
 							src={img11}
@@ -157,8 +157,6 @@ if (Astro.request.headers.get("referer")) {
 			<a class="slider-nav__dots" id="link-6"></a>
 			<a class="slider-nav__dots" id="link-7"></a>
 			<a class="slider-nav__dots" id="link-8"></a>
-			<a class="slider-nav__dots" id="link-9"></a>
-			<a class="slider-nav__dots" id="link-10"></a>
 			<a class="slider-nav__dots" id="link-11"></a>
 			<a class="slider-nav__dots" id="link-12"></a>
 			<a class="slider-nav__dots" id="link-13"></a>
@@ -2032,7 +2030,7 @@ if (Astro.request.headers.get("referer")) {
 
 		// Function to navigate to the next slide
 		const goToNextSlide = () => {
-			if (currentIndex == 12) {
+			if (currentIndex == 10) {
 				return;
 			} else {
 				currentIndex = (currentIndex + 1) % slides.length;
