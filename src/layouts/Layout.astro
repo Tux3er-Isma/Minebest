@@ -77,8 +77,8 @@ import "@fontsource/poppins/800.css";
 			<Bitcoin />
 		</div>
 		<div class="body-c">
-			<div class="cursor-dot"></div>
-			<div class="cursor-outline"></div>
+			<!-- <div class="cursor-dot"></div>
+			<div class="cursor-outline"></div> -->
 			<div id="particles-js"></div>
 			<Header />
 			<Main />
@@ -115,20 +115,21 @@ import "@fontsource/poppins/800.css";
 						class="popup__img"
 					/>
 					<div class="popup__container">
-						<h1 class="popup__title">¡Recibido!</h1>
+						<h1 class="popup__title">¡Gracias por tu interés!</h1>
 						<h2 class="popup__subtitle">
-							Tu mensaje se ha enviado
+							Pronto recibirás toda la información para empezar a minar Bitcoin con la comañía líder a nivel mundial.
 						</h2>
 					</div>
-					<p class="popup__txt">¿Te interesa más información?</p>
+					<h2 class="popup__subtitle">Si prefieres un <p class="popup__txt">trato personalizado,</p>contáctanos por WhatsApp</h2>
 					<button type="button" class="popup__wtsp-btn"
 						><img
 							src="/whatsapp.png"
 							alt="Mineriabtc"
 							class="popup__wtsp-btn__icon"
 						/>
-						<a class="popup__wtsp-btn__link">Whatsapp</a></button
+						<a class="popup__wtsp-btn__link">¡CONTACTA!</a></button
 					>
+					<h2 class="popup__txt popup__txt--2">¡Queremos ayudarte a alcanzar el éxito financiero!</h3>
 				</div>
 			</div>
 		</div>
@@ -145,7 +146,6 @@ import "@fontsource/poppins/800.css";
 		box-sizing: border-box;
 		font-family: "Poppins", sans-serif;
 		scroll-behavior: smooth;
-		cursor: none;
 	}
 
 	body {
@@ -160,7 +160,7 @@ import "@fontsource/poppins/800.css";
 		// background: url("https://cdn.discordapp.com/attachments/973568724722389052/1187782896996601916/MineBest_website_Mesa_de_trabajo_1.png?ex=65982406&is=6585af06&hm=9abdec925815c5075e3cb79a499bfc28612b5abc3cce1385cb65e428b8cd98c1&");
 		display: flex;
 		flex-direction: column;
-		cursor: none;
+		cursor: url("../assets/cursor.png"), auto;
 
 		&::-webkit-scrollbar {
 			width: 7px;
@@ -224,8 +224,9 @@ import "@fontsource/poppins/800.css";
 		border: 1px solid rgba(13, 14, 35, 0.3);
 		padding-left: 100px;
 		padding-right: 100px;
-		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		width: 40vw;
 
 		&__container {
 			text-align: center;
@@ -252,11 +253,18 @@ import "@fontsource/poppins/800.css";
 			font-size: 16px;
 			font-weight: 400;
 			color: #fff;
+			text-align: center;
 		}
 
 		&__txt {
 			font-weight: 600;
-			color: #ff843f;
+			color: #fff900;
+			text-align: center;
+			display: inline-block;
+
+			&--2{
+				font-size: 20px;
+			}
 		}
 
 		&__wtsp-btn {
@@ -265,19 +273,25 @@ import "@fontsource/poppins/800.css";
 			border-radius: 50px;
 			border: none;
 			outline: none;
-			background-color: #d9d9d9;
+			background-color: #ffffff;
 			color: #1cb05f;
 			font-weight: 600;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			transition: all .5s;
+
+			&:hover{
+				scale: 1.1;
+				cursor: url("../assets/pointer.png"), auto;
+			}
 
 			&__icon {
 				width: 3vw;
 			}
 
 			&__link {
-				text-decoration: underline;
+				font-size: 18px;
 			}
 		}
 	}
@@ -324,6 +338,28 @@ import "@fontsource/poppins/800.css";
 		// 	width: 70vw;
 		// 	border: 1px solid #564965fa;
 		// }
+
+		.popup{
+			width: 90vw;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+
+			&__container{
+			}
+
+			&__img{
+				width: 50px;
+			}
+
+			&__wtsp-btn{
+
+				&__icon{
+					width: 35px;
+				}
+			}
+		}
 	}
 
 	.article__title {
@@ -374,6 +410,8 @@ import "@fontsource/poppins/800.css";
 
 	@media only screen and (min-width: 1600px) {
 		.popup {
+			width: 30vw;
+
 			&__wtsp-btn {
 				padding: 4px;
 
@@ -385,7 +423,7 @@ import "@fontsource/poppins/800.css";
 	}
 </style>
 <!--Cursor -->
-<script is:inline>
+<!-- <script is:inline>
 	const cursorDot = document.querySelector(".cursor-dot");
 	const cursorOutline = document.querySelector(".cursor-outline");
 
@@ -404,7 +442,7 @@ import "@fontsource/poppins/800.css";
 			{ duration: 500, fill: "forwards" },
 		);
 	});
-</script>
+</script> -->
 
 <!--ParticleJS -->
 <script is:inline>
