@@ -3757,7 +3757,16 @@ import "@fontsource/poppins/800.css";
 	const odometerArr = document.querySelectorAll(".odometer");
 	setTimeout(() => {
 		odometerArr[0].innerHTML = 25000;
+		
 	}, 1000);
+	setInterval(() =>{
+		if (odometerArr[0].innerHTML == 25000){
+			document.querySelector("#card-3 > div > div > div > div > div > div > span.odometer-formatting-mark").innerHTML = '.'
+		} else {
+			document.querySelector("#card-3 > div > div > div > div > div > div > span.odometer-formatting-mark").innerHTML = '.'
+			console.log(false)
+		}
+	}, 1)
 </script>
 
 <!--Resend -->
