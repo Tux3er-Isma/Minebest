@@ -31,10 +31,6 @@ if (Astro.request.headers.get("referer")) {
 	<div id="particles-js"></div>
 	<div class="desktop-container">
 		<a href={referer}><h1 class="back">+</h1></a>
-		<!-- <div class="title-container">
-      <h1 class="title-container__title">Invertir en <span class="title-container__title--y">oro</span></h1>
-      <h2 class="title-container__subtitle">un camino seguro hacia el éxito patrimonial</h2>
-  </div> -->
 		<div class="container">
 			<div class="slider-wrapper carousel" data-carousel>
 				<ul class="slider" data-slides>
@@ -2155,29 +2151,5 @@ if (Astro.request.headers.get("referer")) {
 
 		// Llama a la función para establecer el color inicial
 		updateMobileNavLinksColor();
-	</script>
-
-	<script is:inline>
-		const itemsWrapper = document.querySelector(".slider").children;
-		for (let i = 0; i < itemsWrapper.length; i++) {
-			const img = itemsWrapper[i].children[0];
-			let x, y, width, height;
-			img.onmouseenter = () => {
-				const size = img.getBoundingClientRect();
-
-				x = size.x;
-				y = size.y;
-				width = size.width;
-				height = size.height;
-			};
-
-			img.onmousemove = (evt) => {
-				const horizontal = ((evt.client - x) / width) * 100;
-				const vertical = ((evt.client - y) / height) * 100;
-
-				img.style.setProperty("--x", horizontal + "%");
-				img.style.setProperty("--y", vertical + "%");
-			};
-		}
 	</script>
 </Layout>
