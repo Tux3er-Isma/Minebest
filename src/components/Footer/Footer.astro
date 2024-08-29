@@ -6,6 +6,7 @@
         <li class="footer__list-container__items"><a href="#s5" class="footer__list-container__items__links">¿Quieres empezar a ganar minando?</a></li>
         <li class="footer__list-container__items"><a href="/privacy" class="footer__list-container__items__links">Política de privacidad</a></li>
     </ul>
+    <p class="footer__pyme">Página Web Realizada por: <a href="https://pymeweb.team" target="_blank" class="footer__pyme__link">PymeWebTeam</a></p>
 </footer>
 
 <style lang="scss">
@@ -43,6 +44,21 @@
                         text-decoration: underline;
                         cursor: url("../../assets/pointer.png"), auto;
                     }
+                }
+            }
+        }
+
+        &__pyme{
+            margin-top: 30px;
+            color: #fff;
+
+            &__link{
+                color: #555;
+                transition: all .5s;
+
+                &:hover{
+                    color: #ff1c3a;
+                    cursor: url("../../assets/pointer.png"), auto;
                 }
             }
         }
