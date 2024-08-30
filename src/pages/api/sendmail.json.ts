@@ -61,14 +61,14 @@ export const POST: APIRoute = async ({ params, request }) => {
             {
                 from: from1,
                 to,
-                subject,
+                subject: "Mensaje desde mineriabtc.com",
                 text,
                 html,
             },
             {
                 from: from2,
                 to: clientTo,
-                subject,
+                subject: "Tu Información sobre Minería Bitcoin",
                 html: clientHtml
             }
         ])
