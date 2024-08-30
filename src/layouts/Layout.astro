@@ -3928,9 +3928,40 @@ import "@fontsource/poppins/800.css";
 				checkBox.checked == false
 			) {
 			} else {
-				if (agentName == "") {
+				if (agentName.innerHTML == "master") {
 					emailSubject = "Tu Información sobre Minería Bitcoin";
-						clientResponseHtml = `<html>
+					clientResponseHtml = `<html>
+    										<head>
+        										<link rel="preconnect" href="https://fonts.googleapis.com">
+												<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+												<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+												<style>
+    												*{
+        												font-family: 'Poppins', sans-serif;
+    												}
+												</style>
+    										</head>
+    										<body>
+        										<p>Estimado/a, ${name.value}</p>
+												<p>Gracias por tu interés en la minería de Bitcoin y por tomar un paso proactivo hacia la planificación de tu futuro financiero. Nos complace saber que compartes nuestra visión.</p>
+												<p>Somos <strong>MineríaBTC</strong>, un equipo de agentes independientes de la empresa líder mundial en Minería Bitcoin. Al igual que tú, empezamos buscando cómo incrementar nuestros ingresos y hoy, todos podemos afirmar que tomar esa decisión fue todo un acierto: nuestros ingresos no dejan de crecer día a día. (Literalmente). </p>
+												<p>Tal como nos has solicitado, queremos compartir contigo cómo puedes generar ingresos con la minería Bitcoin e incluso establecer tu propio negocio en este campo.</p>
+												<p>Para avanzar, nos gustaría coordinar una reunión con uno de nuestros agentes, para ofrecerte más detalles </p>
+												<p>Solo necesitamos que nos digan cómo prefieres mantener esta reunión:</p>
+												<ul>
+													<li>💻 Reunión Virtual (recomendada): Podemos coordinar una sesión por Zoom u otra plataforma online.</li>
+													<li>📞 Llamada Telefónica: Dinos el día y la hora que mejor te convengan, y te llamaré.</li>
+												</ul>
+												<p><strong>IMPORTANTE: </strong> Escríbenos y dinos cómo y cuándo prefieres reunirte a través de este correo: info@mineriabtc.com. No respondas a este.</p>
+												<p>Gracias de nuevo por tu interés en MineríaBTC.</p>
+												<p>Hablamos pronto. ¡Ten un gran día!</p>
+												<br>
+        										<small><strong>Aviso Anti spam:</strong> Si has recibido este mensaje es porque en algún momento solicitaste información sobre MineríaBTC a través del formulario disponible en mineríabtc.com. Al solicitar la información y al aceptar los derechos de privacidad, también aceptabas recibir información. Este correo electrónico ha sido enviado de acuerdo con la legislación vigente sobre correo electrónico comercial. Si has recibido este mensaje por error o no deseas seguir recibiendo nuestras comunicaciones, tienes el derecho de darte de baja en cualquier momento. Para dejar de recibir nuestros correos, envía un mensaje con el asunto "Cancelar suscripción" a ${emailS.innerHTML}. Lamentamos cualquier inconveniente que esto pueda causar.</small>
+    										</body>
+										</html>`;
+				} else {
+					emailSubject = "Tu Información sobre Minería Bitcoin";
+										clientResponseHtml = `<html>
     										<head>
         										<link rel="preconnect" href="https://fonts.googleapis.com">
 												<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3961,37 +3992,6 @@ import "@fontsource/poppins/800.css";
 												<p>Hablamos pronto. ¡Ten un gran día!</p>
 												<br>
 												<p>${agentName.innerHTML}</p>
-        										<small><strong>Aviso Anti spam:</strong> Si has recibido este mensaje es porque en algún momento solicitaste información sobre MineríaBTC a través del formulario disponible en mineríabtc.com. Al solicitar la información y al aceptar los derechos de privacidad, también aceptabas recibir información. Este correo electrónico ha sido enviado de acuerdo con la legislación vigente sobre correo electrónico comercial. Si has recibido este mensaje por error o no deseas seguir recibiendo nuestras comunicaciones, tienes el derecho de darte de baja en cualquier momento. Para dejar de recibir nuestros correos, envía un mensaje con el asunto "Cancelar suscripción" a ${emailS.innerHTML}. Lamentamos cualquier inconveniente que esto pueda causar.</small>
-    										</body>
-										</html>`;
-				} else {
-					emailSubject = "Tu Información sobre Minería Bitcoin";
-					clientResponseHtml = `<html>
-    										<head>
-        										<link rel="preconnect" href="https://fonts.googleapis.com">
-												<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-												<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-												<style>
-    												*{
-        												font-family: 'Poppins', sans-serif;
-    												}
-												</style>
-    										</head>
-    										<body>
-        										<p>Estimado/a, ${name.value}</p>
-												<p>Gracias por tu interés en la minería de Bitcoin y por tomar un paso proactivo hacia la planificación de tu futuro financiero. Nos complace saber que compartes nuestra visión.</p>
-												<p>Somos <strong>MineríaBTC</strong>, un equipo de agentes independientes de la empresa líder mundial en Minería Bitcoin. Al igual que tú, empezamos buscando cómo incrementar nuestros ingresos y hoy, todos podemos afirmar que tomar esa decisión fue todo un acierto: nuestros ingresos no dejan de crecer día a día. (Literalmente). </p>
-												<p>Tal como nos has solicitado, queremos compartir contigo cómo puedes generar ingresos con la minería Bitcoin e incluso establecer tu propio negocio en este campo.</p>
-												<p>Para avanzar, nos gustaría coordinar una reunión con uno de nuestros agentes, para ofrecerte más detalles </p>
-												<p>Solo necesitamos que nos digan cómo prefieres mantener esta reunión:</p>
-												<ul>
-													<li>💻 Reunión Virtual (recomendada): Podemos coordinar una sesión por Zoom u otra plataforma online.</li>
-													<li>📞 Llamada Telefónica: Dinos el día y la hora que mejor te convengan, y te llamaré.</li>
-												</ul>
-												<p><strong>IMPORTANTE: </strong> Escríbenos y dinos cómo y cuándo prefieres reunirte a través de este correo: info@mineriabtc.com. No respondas a este.</p>
-												<p>Gracias de nuevo por tu interés en MineríaBTC.</p>
-												<p>Hablamos pronto. ¡Ten un gran día!</p>
-												<br>
         										<small><strong>Aviso Anti spam:</strong> Si has recibido este mensaje es porque en algún momento solicitaste información sobre MineríaBTC a través del formulario disponible en mineríabtc.com. Al solicitar la información y al aceptar los derechos de privacidad, también aceptabas recibir información. Este correo electrónico ha sido enviado de acuerdo con la legislación vigente sobre correo electrónico comercial. Si has recibido este mensaje por error o no deseas seguir recibiendo nuestras comunicaciones, tienes el derecho de darte de baja en cualquier momento. Para dejar de recibir nuestros correos, envía un mensaje con el asunto "Cancelar suscripción" a ${emailS.innerHTML}. Lamentamos cualquier inconveniente que esto pueda causar.</small>
     										</body>
 										</html>`;
