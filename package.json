@@ -14,6 +14,7 @@
     "@fontsource-variable/outfit": "^5.0.13",
     "@fontsource/dela-gothic-one": "^5.0.19",
     "@fontsource/poppins": "^5.0.14",
+    "@justinribeiro/lite-youtube": "^1.5.0",
     "astro": "^4.0.1",
     "nodemailer": "^6.9.14",
     "particles.js": "^2.0.0",

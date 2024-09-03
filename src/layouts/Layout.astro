@@ -26,7 +26,7 @@ import Footer from "../components/Footer/Footer.astro";
 import Bitcoin from "../components/Bitcoin.astro";
 
 //Font Source
-import "@fontsource/dela-gothic-one";
+// import "@fontsource/dela-gothic-one";
 import "@fontsource-variable/outfit";
 import "@fontsource/poppins/100.css";
 import "@fontsource/poppins/200.css";
@@ -62,17 +62,17 @@ import "@fontsource/poppins/800.css";
 		<script
 			src="https://kit.fontawesome.com/a1618bce8f.js"
 			crossorigin="anonymous"></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
 			rel="stylesheet"
-		/>
+		/> -->
 		<title>{title}</title>
-		<link
+		<!-- <link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-		/>
+		/> -->
 		<!-- <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script> -->
@@ -85,6 +85,7 @@ import "@fontsource/poppins/800.css";
 </script> -->
 
 		<link rel="stylesheet" href="/odometer.css" />
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
 		<!-- <ViewTransitions /> -->
 	</head>
 	<body>
@@ -130,7 +131,7 @@ import "@fontsource/poppins/800.css";
 					</div>
 					<img
 						src="/popup-img.png"
-						alt="Minebest"
+						alt="MineriaBTC"
 						class="popup__img"
 					/>
 					<div class="popup__container">
@@ -175,6 +176,7 @@ import "@fontsource/poppins/800.css";
 			box-sizing: border-box;
 			font-family: "Poppins", sans-serif;
 			scroll-behavior: smooth;
+			font-display: swap;
 		}
 
 		body {

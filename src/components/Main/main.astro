@@ -11,14 +11,15 @@ import FourthSection from "./fourthSection.astro";
         <Video />
     </section>
     <div class="modal">
-        <iframe
+        <!-- <iframe
             class="modal__video"
             src="https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe><div class="modal__close-container">
+            allowfullscreen></iframe> -->
+            <div class="modal__close-container">
             <i class="fa-solid fa-x modal__close-container__icon"></i>
         </div>
     </div>
@@ -265,10 +266,10 @@ import FourthSection from "./fourthSection.astro";
         document.body.style.overflowY = "hidden";
         modal.style.display = "flex";
         modal.style.top = `${window.scrollY}px`;
-        video.setAttribute(
-            "src",
-            `https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh&autoplay=1`,
-        );
+        // video.setAttribute(
+        //     "src",
+        //     `https://www.youtube.com/embed/mOxX0wGX5Kc?si=3B6Ss6deC7PBuePh&autoplay=1`,
+        // );
     });
 
     videoCloseBtn.addEventListener("click", () => {
