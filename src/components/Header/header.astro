@@ -323,10 +323,10 @@ import StaticsContainer from "./staticsContainer.astro";
 <script is:inline>
     const routes = ["/desktop.jpg", "/mobile.png"];
     const img = document.querySelector(".header__img");
-    if (window.screen.availWidth <= 480) {
-        img.src = routes[1];
-    } else {
-        img.src = routes[0];
-    }
+        if (window.screen.availWidth <= 480) {
+            img.src = routes[1];
+        } else {
+            img.src = routes[0];
+        }
     console.log(img);
 </script>

@@ -3961,6 +3961,43 @@ import "@fontsource/poppins/800.css";
         										<small><strong>Aviso Anti spam:</strong> Si has recibido este mensaje es porque en algún momento solicitaste información sobre MineríaBTC a través del formulario disponible en mineríabtc.com. Al solicitar la información y al aceptar los derechos de privacidad, también aceptabas recibir información. Este correo electrónico ha sido enviado de acuerdo con la legislación vigente sobre correo electrónico comercial. Si has recibido este mensaje por error o no deseas seguir recibiendo nuestras comunicaciones, tienes el derecho de darte de baja en cualquier momento. Para dejar de recibir nuestros correos, envía un mensaje con el asunto "Cancelar suscripción" a ${emailS.innerHTML}. Lamentamos cualquier inconveniente que esto pueda causar.</small>
     										</body>
 										</html>`;
+				} else if(agentName.innerHTML == "Christian Suter, Gustavo Moreau"){
+					emailSubject = "Tu Información sobre Minería Bitcoin";
+					clientResponseHtml = `
+					<html>
+    							<head>
+        							<link rel="preconnect" href="https://fonts.googleapis.com">
+        							<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        							<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        							<style>
+            							*{
+                							font-family: 'Poppins', sans-serif;
+            							}
+        							</style>
+    							</head>
+    							<body>
+        							<p>Hola, ${name.value}</p>
+        							<p>Antes que nada, queremos felicitarte por dar el primer paso hacia la planificación de tu futuro financiero con Bitcoin. No todos tienen la visión para hacerlo, así que estás en el camino correcto.</p>
+        							<p>Permítenos presentarnos, somos ${agentName.innerHTML}. Hace un tiempo, al igual que tú ahora, pedimos información sobre cómo incrementar nuestros ingresos a través de la minería de Bitcoin. Hoy, podemos confesar que tomar esa decisión fue todo un acierto: nuestros ingresos no dejan de crecer día a día. (Literalmente)</p>
+        							<p>¡Y es que esto es impresionante! Por eso decidimos compartirlo. Queremos que más personas, como tú, se aprovechen de esta gran oportunidad y no solo unos pocos “privilegiados” (los de siempre, ya nos entiendes…)</p>
+        							<p>No queremos hacerte perder tiempo, así que vayamos directo al grano. Estamos deseando explicarte cómo puedes generar ingresos minando Bitcoin y, si lo deseas, incluso montar tu propio negocio de minería con una empresa líder a nivel mundial (te lo demostraremos en nuestra reunión).</p>
+        							<p>Solo necesitamos que nos digas cómo prefieres que nos reunamos:</p>
+        							<ul>
+            							<li>💻 Reunión Virtual (recomendada): Podemos coordinar una sesión por Zoom u otra plataforma online.</li>
+            							<li>📞 Llamada Telefónica: Dinos el día y la hora que mejor te convengan, y te llamaremos.</li>
+        							</ul>
+        							<p><strong>IMPORTANTE: </strong> Dinos cómo y cuándo prefieres reunirte a través de nosotros:</p>
+        							<ul>
+            							<li>📧 Correo: ${emailS.innerHTML} o…</li>
+            							<li>📱 Teléfono o WhatsApp: ${agentPhone.innerHTML}</li>
+        							</ul>
+        							<p>Gracias de nuevo por tu interés en MineríaBTC.</p>
+        							<p>Hablamos pronto. ¡Que tengas un gran día!</p>
+        							<br>
+        							<p>${agentName.innerHTML}</p>
+        							<small><strong>Aviso Anti spam:</strong> Si has recibido este mensaje es porque en algún momento solicitaste información sobre MineríaBTC a través del formulario disponible en mineríabtc.com. Al solicitar la información y aceptar los derechos de privacidad, también aceptabas recibir información. Este correo electrónico ha sido enviado de acuerdo con la legislación vigente sobre correo electrónico comercial. Si has recibido este mensaje por error o no deseas seguir recibiendo nuestras comunicaciones, tienes el derecho de darte de baja en cualquier momento. Para dejar de recibir nuestros correos, envía un mensaje con el asunto "Cancelar suscripción" a ${emailS.innerHTML}. Lamentamos cualquier inconveniente que esto pueda causar.</small>
+    							</body>
+							</html>`
 				} else {
 					emailSubject = "Tu Información sobre Minería Bitcoin";
 										clientResponseHtml = `<html>
