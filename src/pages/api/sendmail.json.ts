@@ -1,8 +1,7 @@
 // /pages/api/sendmail.json.ts
-export const prerender = false;
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
-
+export const prerender = false;
 
 export const POST: APIRoute = async ({ params, request }) => {
     // console.log('request', request)
