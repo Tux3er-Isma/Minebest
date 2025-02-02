@@ -1,4 +1,5 @@
 // /pages/api/sendmail.json.ts
+export const prerender = false;
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
