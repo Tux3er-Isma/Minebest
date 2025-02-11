@@ -17,6 +17,9 @@ const {
 //View Transitions
 import { ViewTransitions } from "astro:transitions";
 
+//Vercel Analytics
+import { Analytics } from '@vercel/analytics/next';
+
 //Astro Components
 
 //Imports
@@ -89,6 +92,7 @@ import "@fontsource/poppins/800.css";
 		<!-- <ViewTransitions /> -->
 	</head>
 	<body>
+		<Analytics></Analytics>
 		<div class="btc">
 			<Bitcoin />
 		</div>
